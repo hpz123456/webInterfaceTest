@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.markerhub.mapper.MyFirstModelMapper">
+
+
+
+    <!--resultMap对应的是表与实体类的映射  - type 数据库表对应的实体类，别名或完整类名都可以-->
+    <resultMap id="BaseResultMap" type="com.markerhub.entity.MyFirstModel" >
+        <!-- 结果集的主键 -->
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <!-- 普通的列  -column 是数据库中字段， property是实体类中字段-->
+        <result column="case_id" property="caseId" jdbcType="VARCHAR" />
+        <result column="project_name" property="projectName" jdbcType="VARCHAR" />
+        <result column="subordinate_module" property="subordinateModule" jdbcType="VARCHAR" />
+        <result column="case_name" property="caseName" jdbcType="VARCHAR" />
+        <result column="url" property="url" jdbcType="VARCHAR" />
+        <result column="header" property="header" jdbcType="VARCHAR" />
+        <result column="data" property="data" jdbcType="VARCHAR" />
+        <result column="params" property="params" jdbcType="VARCHAR" />
+        <result column="request_method" property="requestMethod" jdbcType="VARCHAR" />
+        <result column="cookie" property="cookie" jdbcType="VARCHAR" />
+        <result column="case_description" property="caseDescription" jdbcType="VARCHAR" />
+        <result column="depend_data" property="dependData" jdbcType="VARCHAR" />
+        <result column="list_assert" property="listAssert" jdbcType="VARCHAR" />
+        <result column="list_vague_assert" property="listVagueAssert" jdbcType="VARCHAR" />
+        <result column="common_assert" property="commonAssert" jdbcType="VARCHAR" />
+        <result column="get_cookie" property="getCookie" jdbcType="VARCHAR" />
+        <result column="remark" property="remark" jdbcType="VARCHAR" />
+
+    </resultMap>
+
+
+    <!--parameterType(输入类型)、resultType(输出类型)-->
+    <select id="find_all" resultType="com.markerhub.entity.MyFirstModel" >
+        SELECT * FROM my_first_model
+    </select>
+
+
+    <!-- 批量插入内容 -->
+    <insert id="saveModification" keyProperty="id" parameterType="com.markerhub.entity.MyFirstModel" >
+        insert into my_first_model (
+        id,
+        case_id,
+        project_name,
+        subordinate_module,
+        case_name,
+        url,
+        header,
+        data,
+        params,
+        request_method,
+        cookie,
+        case_description,
+        depend_data,
+        list_assert,
+        list_vague_assert,
+        common_assert,
+        get_cookie,
+        remark)
+        values
+        (
+        "${id}",
+        "${caseId}",
+        "${projectName}",
+        "${subordinateModule}",
+        "${caseName}",
+        "${url}",
+        "${header}",
+        "${data}",
+        "${params}",
+        "${requestMethod}",
+        "${cookie}",
+        "${caseDescription}",
+        "${dependData}",
+        "${listAssert}",
+        "${listVagueAssert}",
+        "${commonAssert}",
+        "${getCookie}",
+        "${remark}"
+        )
+    </insert>
+
+
+    <delete id="deleteList" parameterType="java.util.List">
+        delete from my_first_model where id in
+        <foreach item="item" collection="list" open="(" separator="," close=")">
+            "${item.id}"
+        </foreach>
+    </delete>
+
+
+
+    <!-- 批量插入内容 -->
+<!--    <insert id="insertDepartments" useGeneratedKeys="true" keyProperty="id" parameterType="com.wg.demo.po.Department">-->
+<!--        insert into department (id, dept_name, descr,-->
+<!--        create_time)-->
+<!--        values-->
+<!--        <foreach collection="list" item="dept" index="index" separator=",">-->
+<!--            (#{dept.id,jdbcType=BIGINT}, #{dept.deptName,jdbcType=VARCHAR}, #{dept.descr,jdbcType=VARCHAR},-->
+<!--            #{dept.createTime,jdbcType=TIMESTAMP})-->
+<!--        </foreach>-->
+<!--    </insert>-->
+
+
+
+
+</mapper>

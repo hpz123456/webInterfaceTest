@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "server.port.spring.thymeleaf.prefix",
+      "type": "java.lang.String",
+      "description": "Description for server.port.spring.thymeleaf.prefix."
+  }
+] }
