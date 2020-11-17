@@ -2,6 +2,7 @@ package com.markerhub.mapper;
 
 import com.markerhub.entity.MyFirstModel;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -19,6 +20,9 @@ public interface MyFirstModelMapper extends BaseMapper<MyFirstModel> {
 
     void saveModification(MyFirstModel myFirstModel_list);
 
-
     void deleteList(List<MyFirstModel> caseid_list);
+
+    List<MyFirstModel> findCase(MyFirstModel myFirstModel);
+
+    void updateCase(MyFirstModel myFirstModel);
 }

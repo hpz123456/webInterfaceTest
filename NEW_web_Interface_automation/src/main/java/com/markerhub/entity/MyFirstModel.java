@@ -58,9 +58,11 @@ public class MyFirstModel implements Serializable {
 
     private String remark;
 
-    private String remark1;
+    private String assertResult;
 
-    private String remark2;
+    private String editor;
+
+    private String performer;
 
 
     public static long getSerialVersionUID() {
@@ -219,19 +221,27 @@ public class MyFirstModel implements Serializable {
         this.remark = remark;
     }
 
-    public String getRemark1() {
-        return remark1;
+    public String getAssertResult() {
+        return assertResult;
     }
 
-    public void setRemark1(String remark1) {
-        this.remark1 = remark1;
+    public void setAssertResult(String assertResult) {
+        this.assertResult = assertResult;
     }
 
-    public String getRemark2() {
-        return remark2;
+    public String getEditor() {
+        return editor;
     }
 
-    public void setRemark2(String remark2) {
-        this.remark2 = remark2;
+    public void setEditor(String editor) {
+        this.editor = editor;
+    }
+
+    public String getPerformer() {
+        return performer;
+    }
+
+    public void setPerformer(String performer) {
+        this.performer = performer;
     }
 }

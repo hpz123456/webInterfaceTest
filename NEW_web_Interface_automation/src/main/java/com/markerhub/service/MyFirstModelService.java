@@ -21,4 +21,9 @@ public interface MyFirstModelService extends IService<MyFirstModel> {
     void saveModification(MyFirstModel myFirstModel_list);
 
     void deleteList(List<MyFirstModel> caseid_list);
+
+
+    List<MyFirstModel> findCase(MyFirstModel myFirstModel);
+
+    void updateCase(MyFirstModel myFirstModel);
 }

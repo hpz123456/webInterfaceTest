@@ -4,6 +4,7 @@ import com.markerhub.entity.MyFirstModel;
 import com.markerhub.mapper.MyFirstModelMapper;
 import com.markerhub.service.MyFirstModelService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,6 +41,16 @@ public class MyFirstModelServiceImpl extends ServiceImpl<MyFirstModelMapper, MyF
     public void deleteList(List<MyFirstModel> caseid_list){
 
         myFirstModelMapper.deleteList(caseid_list);
+    }
+
+    public List<MyFirstModel> findCase(MyFirstModel myFirstModel){
+
+        List<MyFirstModel> myFirstModels_list = myFirstModelMapper.findCase(myFirstModel);
+        return myFirstModels_list;
+    }
+
+    public void updateCase(MyFirstModel myFirstModel){
+        myFirstModelMapper.updateCase(myFirstModel);
     }
 
 }

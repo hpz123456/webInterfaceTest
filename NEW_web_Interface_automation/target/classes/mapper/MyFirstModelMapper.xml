@@ -26,13 +26,49 @@
         <result column="common_assert" property="commonAssert" jdbcType="VARCHAR" />
         <result column="get_cookie" property="getCookie" jdbcType="VARCHAR" />
         <result column="remark" property="remark" jdbcType="VARCHAR" />
-
+        <result column="assert_esult" property="assertResult" jdbcType="VARCHAR" />
+        <result column="editor" property="editor" jdbcType="VARCHAR" />
+        <result column="performer" property="performer" jdbcType="VARCHAR" />
     </resultMap>
 
 
     <!--parameterType(输入类型)、resultType(输出类型)-->
     <select id="find_all" resultType="com.markerhub.entity.MyFirstModel" >
         SELECT * FROM my_first_model
+    </select>
+
+    <!--parameterType(输入类型)、resultType(输出类型)-->
+    <select id="findCase" parameterType="com.markerhub.entity.MyFirstModel" resultType="com.markerhub.entity.MyFirstModel">
+        SELECT
+        *
+        FROM my_first_model
+        <where>
+            <if test="caseId != null ">
+                case_id = #{caseId}
+                AND
+            </if>
+            <if test="projectName != null ">
+                project_name = #{projectName}
+                AND
+            </if>
+            <if test="subordinateModule != null ">
+                subordinate_module = #{subordinateModule}
+                AND
+            </if>
+            <if test="caseName != null ">
+                case_name = #{caseName}
+                AND
+            </if>
+            <if test="editor != null ">
+                editor = #{editor}
+                AND
+            </if>
+            <if test="performer != null ">
+                performer = #{performer}
+                AND
+            </if>
+            1 = 1
+        </where>
     </select>
 
 
@@ -56,7 +92,10 @@
         list_vague_assert,
         common_assert,
         get_cookie,
-        remark)
+        remark,
+        assert_result,
+        editor,
+        performer)
         values
         (
         "${id}",
@@ -76,7 +115,10 @@
         "${listVagueAssert}",
         "${commonAssert}",
         "${getCookie}",
-        "${remark}"
+        "${remark}",
+        "${assertResult}",
+        "${editor}",
+        "${performer}"
         )
     </insert>
 
@@ -88,7 +130,29 @@
         </foreach>
     </delete>
 
-
+    <update id="updateCase"  parameterType="com.markerhub.entity.MyFirstModel">
+        update my_first_model
+        <trim prefix="set" suffixOverrides=",">
+            <if test="caseId!=null">case_id=${caseId},</if>
+            <if test="projectName!=null">project_name=${projectName},</if>
+            <if test="subordinateModule!=null">subordinate_module=${subordinateModule},</if>
+            <if test="caseName!=null">case_name=${caseName},</if>
+            <if test="url!=null">url=${url},</if>
+            <if test="header!=null">header=${header},</if>
+            <if test="params!=null">params=${params},</if>
+            <if test="requestMethod!=null">request_method=${requestMethod},</if>
+            <if test="caseDescription!=null">case_description=${caseDescription},</if>
+            <if test="dependData!=null">depend_data=${dependData},</if>
+            <if test="listAssert!=null">list_assert=${listAssert},</if>
+            <if test="listVagueAssert!=null">list_vague_assert=${listVagueAssert},</if>
+            <if test="commonAssert!=null">common_assert=${commonAssert},</if>
+            <if test="getCookie!=null">get_cookie=${getCookie},</if>
+            <if test="assertResult!=null">assert_result=${assertResult},</if>
+            <if test="editor!=null">editor=${editor},</if>
+            <if test="performer!=null">performer=${performer}</if>
+        </trim>
+        WHERE id=#{id}
+    </update>
 
     <!-- 批量插入内容 -->
 <!--    <insert id="insertDepartments" useGeneratedKeys="true" keyProperty="id" parameterType="com.wg.demo.po.Department">-->

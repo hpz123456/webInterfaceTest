@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="61" started-at="2020-11-17T02:15:37Z" finished-at="2020-11-17T02:15:37Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="61" started-at="2020-11-17T02:15:37Z" finished-at="2020-11-17T02:15:37Z">
+      <class name="com.markerhub.service.impl.testservice">
+        <test-method status="PASS" signature="testDataProvider(java.lang.String, int)[pri:0, instance:com.markerhub.service.impl.testservice@7bb11784]" name="testDataProvider" duration-ms="9" started-at="2020-11-17T02:15:37Z" data-provider="data" finished-at="2020-11-17T02:15:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[zhangsan]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDataProvider -->
+        <test-method status="PASS" signature="testDataProvider(java.lang.String, int)[pri:0, instance:com.markerhub.service.impl.testservice@7bb11784]" name="testDataProvider" duration-ms="0" started-at="2020-11-17T02:15:37Z" data-provider="data" finished-at="2020-11-17T02:15:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[wangwu]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[30]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDataProvider -->
+        <test-method status="PASS" signature="testDataProvider(java.lang.String, int)[pri:0, instance:com.markerhub.service.impl.testservice@7bb11784]" name="testDataProvider" duration-ms="0" started-at="2020-11-17T02:15:37Z" data-provider="data" finished-at="2020-11-17T02:15:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[lisi]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[20]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDataProvider -->
+      </class> <!-- com.markerhub.service.impl.testservice -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>

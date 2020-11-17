@@ -50,6 +50,23 @@ public class MyFirstModelController {
         return Result.succ(200,"操作成功",null);
     }
 
+    //查询用例
+    @PostMapping("/findCase")
+    public Result findCase(@RequestBody MyFirstModel myFirstModel){
+
+        List<MyFirstModel> myFirstModels_list = myFirstModelService.findCase(myFirstModel);
+        return Result.succ(200,"操作成功",myFirstModels_list);
+    }
+
+    //修改用例
+    @PostMapping("/updateCase")
+    public Result updateCase(@RequestBody MyFirstModel myFirstModel){
+
+        myFirstModelService.updateCase(myFirstModel);
+        return Result.succ(200,"操作成功",null);
+    }
+
+
 
 
 
