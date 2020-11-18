@@ -154,6 +154,64 @@
         WHERE id=#{id}
     </update>
 
+
+    <!-- 批量插入内容 -->
+    <insert id="saveMoreModification" keyProperty="id" parameterType="com.markerhub.entity.MyFirstModel" >
+        insert into my_first_model (
+        id,
+        case_id,
+        project_name,
+        subordinate_module,
+        case_name,
+        url,
+        header,
+        data,
+        params,
+        request_method,
+        cookie,
+        case_description,
+        depend_data,
+        list_assert,
+        list_vague_assert,
+        common_assert,
+        get_cookie,
+        remark,
+        assert_result,
+        editor,
+        performer,
+        token)
+        values
+        <foreach collection="myFirstModel_list" item="list" index="index" separator=",">
+        (
+        "${list.id}",
+        "${list.caseId}",
+        "${list.projectName}",
+        "${list.subordinateModule}",
+        "${list.caseName}",
+        "${list.url}",
+        "${list.header}",
+        "${list.data}",
+        "${list.params}",
+        "${list.requestMethod}",
+        "${list.cookie}",
+        "${list.caseDescription}",
+        "${list.dependData}",
+        "${list.listAssert}",
+        "${list.listVagueAssert}",
+        "${list.commonAssert}",
+        "${list.getCookie}",
+        "${list.remark}",
+        "${list.assertResult}",
+        "${list.editor}",
+        "${list.performer}",
+        "${list.token}"
+        )
+        </foreach>
+    </insert>
+
+
+
+
     <!-- 批量插入内容 -->
 <!--    <insert id="insertDepartments" useGeneratedKeys="true" keyProperty="id" parameterType="com.wg.demo.po.Department">-->
 <!--        insert into department (id, dept_name, descr,-->

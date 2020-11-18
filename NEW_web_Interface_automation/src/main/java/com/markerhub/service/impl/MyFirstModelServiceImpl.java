@@ -50,7 +50,13 @@ public class MyFirstModelServiceImpl extends ServiceImpl<MyFirstModelMapper, MyF
     }
 
     public void updateCase(MyFirstModel myFirstModel){
+
         myFirstModelMapper.updateCase(myFirstModel);
     }
+
+    public void saveMoreModification(List<MyFirstModel> myFirstModel_list){
+        myFirstModelMapper.saveMoreModification(myFirstModel_list);
+    }
+
 
 }

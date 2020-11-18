@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Command line suite" duration-ms="61" started-at="2020-11-17T02:15:37Z" finished-at="2020-11-17T02:15:37Z">
+  <suite name="Command line suite" duration-ms="79" started-at="2020-11-18T01:33:20Z" finished-at="2020-11-18T01:33:20Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="61" started-at="2020-11-17T02:15:37Z" finished-at="2020-11-17T02:15:37Z">
+    <test name="Command line test" duration-ms="79" started-at="2020-11-18T01:33:20Z" finished-at="2020-11-18T01:33:20Z">
       <class name="com.markerhub.service.impl.testservice">
-        <test-method status="PASS" signature="testDataProvider(java.lang.String, int)[pri:0, instance:com.markerhub.service.impl.testservice@7bb11784]" name="testDataProvider" duration-ms="9" started-at="2020-11-17T02:15:37Z" data-provider="data" finished-at="2020-11-17T02:15:37Z">
+        <test-method status="PASS" signature="testDataProvider(java.lang.String, int)[pri:0, instance:com.markerhub.service.impl.testservice@7907ec20]" name="testDataProvider" duration-ms="12" started-at="2020-11-18T01:33:20Z" data-provider="data" finished-at="2020-11-18T01:33:20Z">
           <params>
             <param index="0">
               <value>
@@ -23,23 +23,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDataProvider -->
-        <test-method status="PASS" signature="testDataProvider(java.lang.String, int)[pri:0, instance:com.markerhub.service.impl.testservice@7bb11784]" name="testDataProvider" duration-ms="0" started-at="2020-11-17T02:15:37Z" data-provider="data" finished-at="2020-11-17T02:15:37Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[wangwu]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[30]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDataProvider -->
-        <test-method status="PASS" signature="testDataProvider(java.lang.String, int)[pri:0, instance:com.markerhub.service.impl.testservice@7bb11784]" name="testDataProvider" duration-ms="0" started-at="2020-11-17T02:15:37Z" data-provider="data" finished-at="2020-11-17T02:15:37Z">
+        <test-method status="PASS" signature="testDataProvider(java.lang.String, int)[pri:0, instance:com.markerhub.service.impl.testservice@7907ec20]" name="testDataProvider" duration-ms="0" started-at="2020-11-18T01:33:20Z" data-provider="data" finished-at="2020-11-18T01:33:20Z">
           <params>
             <param index="0">
               <value>
@@ -49,6 +33,22 @@
             <param index="1">
               <value>
                 <![CDATA[20]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDataProvider -->
+        <test-method status="PASS" signature="testDataProvider(java.lang.String, int)[pri:0, instance:com.markerhub.service.impl.testservice@7907ec20]" name="testDataProvider" duration-ms="0" started-at="2020-11-18T01:33:20Z" data-provider="data" finished-at="2020-11-18T01:33:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[wangwu]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[30]]>
               </value>
             </param>
           </params>

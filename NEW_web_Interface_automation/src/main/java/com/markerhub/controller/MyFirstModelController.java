@@ -4,6 +4,7 @@ package com.markerhub.controller;
 import com.markerhub.common.lang.Result;
 import com.markerhub.entity.MyFirstModel;
 import com.markerhub.service.MyFirstModelService;
+import com.markerhub.tool.MathUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -35,10 +36,13 @@ public class MyFirstModelController {
     }
     //新增一条用例
     @PostMapping("/saveModification")
-    public Result saveModification(@RequestBody MyFirstModel myFirstModel){
-        String uuid= UUID.randomUUID().toString().replace("-", "").toLowerCase();
-        myFirstModel.setId(uuid);
-        myFirstModelService.saveModification(myFirstModel);
+    public Result saveModification(@RequestBody List<MyFirstModel> myFirstModel){
+
+        for (MyFirstModel fm:myFirstModel){
+            String id = MathUtils.getPrimaryKey();
+            fm.setId(id);
+        }
+        myFirstModelService.saveMoreModification(myFirstModel);
         return Result.succ(200,"操作成功",null);
     }
 
