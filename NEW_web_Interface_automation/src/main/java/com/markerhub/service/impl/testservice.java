@@ -4,21 +4,14 @@ package com.markerhub.service.impl;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.List;
-
-
 public class testservice {
+
+    Entry entry = new Entry();
 
     @DataProvider(name = "data")
     public Object[][] providerData(){
         System.out.println("cs");
-        Object[][] o = new Object[][]{
-                {"zhangsan",10},
-                {"lisi",20},
-                {"wangwu",30}
-        };
+        Object[][] o = entry.objects;
 
 
         return o;

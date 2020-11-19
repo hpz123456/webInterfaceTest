@@ -8,6 +8,7 @@ import com.markerhub.tool.MathUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.UUID;
@@ -43,6 +44,14 @@ public class MyFirstModelController {
             fm.setId(id);
         }
         myFirstModelService.saveMoreModification(myFirstModel);
+        return Result.succ(200,"操作成功",null);
+    }
+
+    //批量新增用例
+    @PostMapping("/batchSaveModification")
+    public Result batchSaveModification(@RequestBody MultipartFile file){
+        String filename = file.getOriginalFilename();
+        myFirstModelService.batchSaveModification(file);
         return Result.succ(200,"操作成功",null);
     }
 

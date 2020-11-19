@@ -244,4 +244,32 @@ public class MyFirstModel implements Serializable {
     public void setPerformer(String performer) {
         this.performer = performer;
     }
+
+    @Override
+    public String toString() {
+        return "MyFirstModel{" +
+                "id='" + id + '\'' +
+                ", caseId='" + caseId + '\'' +
+                ", projectName='" + projectName + '\'' +
+                ", subordinateModule='" + subordinateModule + '\'' +
+                ", caseName='" + caseName + '\'' +
+                ", url='" + url + '\'' +
+                ", header='" + header + '\'' +
+                ", data='" + data + '\'' +
+                ", params='" + params + '\'' +
+                ", requestMethod='" + requestMethod + '\'' +
+                ", cookie='" + cookie + '\'' +
+                ", caseDescription='" + caseDescription + '\'' +
+                ", token='" + token + '\'' +
+                ", dependData='" + dependData + '\'' +
+                ", listAssert='" + listAssert + '\'' +
+                ", listVagueAssert='" + listVagueAssert + '\'' +
+                ", commonAssert='" + commonAssert + '\'' +
+                ", getCookie='" + getCookie + '\'' +
+                ", remark='" + remark + '\'' +
+                ", assertResult='" + assertResult + '\'' +
+                ", editor='" + editor + '\'' +
+                ", performer='" + performer + '\'' +
+                '}';
+    }
 }

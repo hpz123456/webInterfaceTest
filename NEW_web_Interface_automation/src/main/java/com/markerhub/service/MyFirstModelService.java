@@ -2,6 +2,7 @@ package com.markerhub.service;
 
 import com.markerhub.entity.MyFirstModel;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -28,4 +29,6 @@ public interface MyFirstModelService extends IService<MyFirstModel> {
     void updateCase(MyFirstModel myFirstModel);
 
     void saveMoreModification(List<MyFirstModel> myFirstModel_list);
+
+    void batchSaveModification(MultipartFile file);
 }

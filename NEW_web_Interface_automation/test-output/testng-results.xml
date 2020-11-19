@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Command line suite" duration-ms="79" started-at="2020-11-18T01:33:20Z" finished-at="2020-11-18T01:33:20Z">
+  <suite name="Command line suite" duration-ms="65" started-at="2020-11-19T06:14:45Z" finished-at="2020-11-19T06:14:45Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="79" started-at="2020-11-18T01:33:20Z" finished-at="2020-11-18T01:33:20Z">
+    <test name="Command line test" duration-ms="65" started-at="2020-11-19T06:14:45Z" finished-at="2020-11-19T06:14:45Z">
       <class name="com.markerhub.service.impl.testservice">
-        <test-method status="PASS" signature="testDataProvider(java.lang.String, int)[pri:0, instance:com.markerhub.service.impl.testservice@7907ec20]" name="testDataProvider" duration-ms="12" started-at="2020-11-18T01:33:20Z" data-provider="data" finished-at="2020-11-18T01:33:20Z">
+        <test-method status="PASS" signature="testDataProvider(java.lang.String, int)[pri:0, instance:com.markerhub.service.impl.testservice@6833ce2c]" name="testDataProvider" duration-ms="14" started-at="2020-11-19T06:14:45Z" data-provider="data" finished-at="2020-11-19T06:14:45Z">
           <params>
             <param index="0">
               <value>
@@ -23,7 +23,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDataProvider -->
-        <test-method status="PASS" signature="testDataProvider(java.lang.String, int)[pri:0, instance:com.markerhub.service.impl.testservice@7907ec20]" name="testDataProvider" duration-ms="0" started-at="2020-11-18T01:33:20Z" data-provider="data" finished-at="2020-11-18T01:33:20Z">
+        <test-method status="PASS" signature="testDataProvider(java.lang.String, int)[pri:0, instance:com.markerhub.service.impl.testservice@6833ce2c]" name="testDataProvider" duration-ms="1" started-at="2020-11-19T06:14:45Z" data-provider="data" finished-at="2020-11-19T06:14:45Z">
           <params>
             <param index="0">
               <value>
@@ -39,7 +39,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDataProvider -->
-        <test-method status="PASS" signature="testDataProvider(java.lang.String, int)[pri:0, instance:com.markerhub.service.impl.testservice@7907ec20]" name="testDataProvider" duration-ms="0" started-at="2020-11-18T01:33:20Z" data-provider="data" finished-at="2020-11-18T01:33:20Z">
+        <test-method status="PASS" signature="testDataProvider(java.lang.String, int)[pri:0, instance:com.markerhub.service.impl.testservice@6833ce2c]" name="testDataProvider" duration-ms="0" started-at="2020-11-19T06:14:45Z" data-provider="data" finished-at="2020-11-19T06:14:45Z">
           <params>
             <param index="0">
               <value>
