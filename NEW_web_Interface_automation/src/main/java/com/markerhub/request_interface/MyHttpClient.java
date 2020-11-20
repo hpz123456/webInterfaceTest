@@ -1,8 +1,8 @@
-package com.markerhub.test1;
+package com.markerhub.request_interface;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
-import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
@@ -16,7 +16,7 @@ public class MyHttpClient<response> {
         HttpResponse response ;
         String url = "http://www.baidu.com";
         CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpPost post = new HttpPost(url);
+        HttpGet post = new HttpGet(url);
         try {
             response = httpClient.execute(post);
             int statusCode = response.getStatusLine().getStatusCode();
