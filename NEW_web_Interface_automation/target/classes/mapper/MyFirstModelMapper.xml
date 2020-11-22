@@ -93,7 +93,6 @@
         common_assert,
         get_cookie,
         remark,
-        assert_result,
         editor,
         performer)
         values
@@ -116,7 +115,6 @@
         "${commonAssert}",
         "${getCookie}",
         "${remark}",
-        "${assertResult}",
         "${editor}",
         "${performer}"
         )
@@ -176,7 +174,6 @@
         common_assert,
         get_cookie,
         remark,
-        assert_result,
         editor,
         performer,
         token)
@@ -201,7 +198,6 @@
         "${list.commonAssert}",
         "${list.getCookie}",
         "${list.remark}",
-        "${list.assertResult}",
         "${list.editor}",
         "${list.performer}",
         "${list.token}"

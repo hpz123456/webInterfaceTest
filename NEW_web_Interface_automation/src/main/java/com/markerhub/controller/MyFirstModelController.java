@@ -41,6 +41,9 @@ public class MyFirstModelController {
     public Result saveModification(@RequestBody List<MyFirstModel> myFirstModel){
 
         for (MyFirstModel fm:myFirstModel){
+            if(fm.getCaseId() == null || fm.getCaseId() == ""){
+                return Result.succ(200,"操作成功",null);
+            }
             String id = MathUtils.getPrimaryKey();
             fm.setId(id);
         }
