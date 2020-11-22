@@ -2,7 +2,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/interface_automation_test_cases?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/interface_automation_test_cases?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai&characterEncoding=utf-8
     username: root
     password: 123456
   # thymeleaf
@@ -14,5 +14,8 @@ spring:
     mode: HTML
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**Mapper.xml
+  # spring boot集成mybatis的方式打印sql
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 server:
   port: 8081

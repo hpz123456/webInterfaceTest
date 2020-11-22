@@ -31,9 +31,10 @@ public class MyFirstModelController {
     //查询所有用例
     @PostMapping("/findAll")
     public Result find_all(){
-        List<MyFirstModel> myFirstModels_list = myFirstModelService.find_all();
 
+        List<MyFirstModel> myFirstModels_list = myFirstModelService.find_all();
         return Result.succ(200,"操作成功",myFirstModels_list);
+
     }
     //新增一条用例
     @PostMapping("/saveModification")
@@ -66,8 +67,11 @@ public class MyFirstModelController {
     //查询用例
     @PostMapping("/findCase")
     public Result findCase(@RequestBody MyFirstModel myFirstModel){
-
+        System.out.println(myFirstModel.toString());
         List<MyFirstModel> myFirstModels_list = myFirstModelService.findCase(myFirstModel);
+        for (MyFirstModel m: myFirstModels_list) {
+            System.out.println(m.toString());
+        }
         return Result.succ(200,"操作成功",myFirstModels_list);
     }
 

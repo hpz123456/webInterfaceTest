@@ -43,27 +43,27 @@
         *
         FROM my_first_model
         <where>
-            <if test="caseId != null ">
+            <if test="caseId != null and caseId != ''">
                 case_id = #{caseId}
                 AND
             </if>
-            <if test="projectName != null ">
+            <if test="projectName != null and projectName != ''">
                 project_name = #{projectName}
                 AND
             </if>
-            <if test="subordinateModule != null ">
+            <if test="subordinateModule != null and subordinateModule != ''">
                 subordinate_module = #{subordinateModule}
                 AND
             </if>
-            <if test="caseName != null ">
+            <if test="caseName != null and caseName != ''">
                 case_name = #{caseName}
                 AND
             </if>
-            <if test="editor != null ">
+            <if test="editor != null and editor != ''">
                 editor = #{editor}
                 AND
             </if>
-            <if test="performer != null ">
+            <if test="performer != null and performer != ''">
                 performer = #{performer}
                 AND
             </if>
