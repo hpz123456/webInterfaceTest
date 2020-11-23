@@ -1,17 +1,15 @@
 package com.markerhub.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.markerhub.entity.MyFirstModel;
 import com.markerhub.mapper.MyFirstModelMapper;
 import com.markerhub.service.MyFirstModelService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.markerhub.tool.ExcelUtil;
 import com.markerhub.tool.MathUtils;
-import org.apache.ibatis.annotations.Param;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
 
 import java.io.*;
 import java.util.ArrayList;
@@ -21,7 +19,7 @@ import java.util.Map;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author 关注公众号：MarkerHub
@@ -32,46 +30,59 @@ public class MyFirstModelServiceImpl extends ServiceImpl<MyFirstModelMapper, MyF
 
     @Autowired
     private MyFirstModelMapper myFirstModelMapper;
+
     //查询所有用例
-    public List<MyFirstModel> find_all(){
+    @Override
+    public List<MyFirstModel> find_all() {
         List<MyFirstModel> myFirstModels_list = myFirstModelMapper.find_all();
         return myFirstModels_list;
     }
+
     //新增一条用例
-    public void saveModification(MyFirstModel myFirstModel_list){
+    @Override
+    public void saveModification(MyFirstModel myFirstModel_list) {
 
         myFirstModelMapper.saveModification(myFirstModel_list);
     }
+
     //批量删除用例
-    public void deleteList(List<MyFirstModel> caseid_list){
+    @Override
+    public void deleteList(List<String> caseid_list) {
 
         myFirstModelMapper.deleteList(caseid_list);
     }
+
     //查询测试用例
-    public List<MyFirstModel> findCase(MyFirstModel myFirstModel){
+    @Override
+    public List<MyFirstModel> findCase(MyFirstModel myFirstModel) {
 
         List<MyFirstModel> myFirstModels_list = myFirstModelMapper.findCase(myFirstModel);
         return myFirstModels_list;
     }
+
     //修改测试用例
-    public void updateCase(MyFirstModel myFirstModel){
+    @Override
+    public void updateCase(MyFirstModel myFirstModel) {
 
         myFirstModelMapper.updateCase(myFirstModel);
     }
+
     //批量新增用例
-    public void saveMoreModification(List<MyFirstModel> myFirstModel_list){
+    @Override
+    public void saveMoreModification(List<MyFirstModel> myFirstModel_list) {
         myFirstModelMapper.saveMoreModification(myFirstModel_list);
     }
 
 
     //通过Excel批量新增用例
-    public void batchSaveModification(MultipartFile file){
+    @Override
+    public void batchSaveModification(MultipartFile file) {
         String path = "src\\main\\java\\com\\markerhub\\file_Excel";
         String file_name = fileUpload(file);
-        Integer sheet_number = sheet_list(path,file_name);
-        for (int i = 0;i < sheet_number;i++){
-            List<MyFirstModel> myFirstModel_list = myFirstModels(path,file_name,i);
-            if (myFirstModel_list.isEmpty()){
+        Integer sheet_number = sheet_list(path, file_name);
+        for (int i = 0; i < sheet_number; i++) {
+            List<MyFirstModel> myFirstModel_list = myFirstModels(path, file_name, i);
+            if (myFirstModel_list.isEmpty()) {
                 continue;
             }
             myFirstModelMapper.saveMoreModification(myFirstModel_list);
@@ -82,8 +93,8 @@ public class MyFirstModelServiceImpl extends ServiceImpl<MyFirstModelMapper, MyF
     }
 
     //获取文件sheet页
-    public Integer sheet_list(String path,String file_name){
-        InputStream ins =null;
+    public Integer sheet_list(String path, String file_name) {
+        InputStream ins = null;
         XSSFWorkbook wb = null;
         Integer sheet_number = 0;
         File target = new File(path, file_name);
@@ -103,13 +114,13 @@ public class MyFirstModelServiceImpl extends ServiceImpl<MyFirstModelMapper, MyF
     }
 
     //批量实例化
-    public List<MyFirstModel> myFirstModels(String path,String file_name,Integer sheet_number){
+    public List<MyFirstModel> myFirstModels(String path, String file_name, Integer sheet_number) {
         ExcelUtil excelUtil = new ExcelUtil();
 //        String path = "D:\\my_web_interface\\NEW_web_Interface_automation\\src\\main\\java\\com\\markerhub\\file_Excel";
-        List<Map<String,String>> list = excelUtil.readExcel2007(path,file_name,0,0,sheet_number);
+        List<Map<String, String>> list = excelUtil.readExcel2007(path, file_name, 0, 0, sheet_number);
         List<MyFirstModel> myFirstModels_list = new ArrayList<MyFirstModel>();
 
-        for (Map<String,String> model:list) {
+        for (Map<String, String> model : list) {
             MyFirstModel myFirstModel = new MyFirstModel();
             myFirstModel.setCaseId(model.get("用例id"));
             myFirstModel.setProjectName(model.get("项目名称"));
@@ -144,7 +155,7 @@ public class MyFirstModelServiceImpl extends ServiceImpl<MyFirstModelMapper, MyF
         }
         String path = "src/main/java/com/markerhub/entity";
         String fileName = System.currentTimeMillis() + file.getOriginalFilename();
-        File dest = new File(new File(path).getAbsolutePath()+ "/" + fileName);
+        File dest = new File(new File(path).getAbsolutePath() + "/" + fileName);
         if (!dest.getParentFile().exists()) {
             dest.getParentFile().mkdirs();
         }

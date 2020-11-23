@@ -1,14 +1,14 @@
 package com.markerhub.mapper;
 
-import com.markerhub.entity.MyFirstModel;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.markerhub.entity.MyFirstModel;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 /**
  * <p>
- *  Mapper 接口
+ * Mapper 接口
  * </p>
  *
  * @author 关注公众号：MarkerHub
@@ -20,7 +20,7 @@ public interface MyFirstModelMapper extends BaseMapper<MyFirstModel> {
 
     void saveModification(MyFirstModel myFirstModel_list);
 
-    void deleteList(List<MyFirstModel> caseid_list);
+    void deleteList(List<String> caseid_list);
 
     List<MyFirstModel> findCase(MyFirstModel myFirstModel);
 

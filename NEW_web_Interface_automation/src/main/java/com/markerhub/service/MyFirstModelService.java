@@ -1,14 +1,14 @@
 package com.markerhub.service;
 
-import com.markerhub.entity.MyFirstModel;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.markerhub.entity.MyFirstModel;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author 关注公众号：MarkerHub
@@ -21,7 +21,7 @@ public interface MyFirstModelService extends IService<MyFirstModel> {
 
     void saveModification(MyFirstModel myFirstModel_list);
 
-    void deleteList(List<MyFirstModel> caseid_list);
+    void deleteList(List<String> caseid_list);
 
 
     List<MyFirstModel> findCase(MyFirstModel myFirstModel);

@@ -3,8 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/NEW_web_Interface_automation.iml" filepath="$PROJECT_DIR$/NEW_web_Interface_automation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../new_web_interface_vue/new_web_interface_vue.iml" filepath="$PROJECT_DIR$/../new_web_interface_vue/new_web_interface_vue.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../web_Interface_vue/web_interface_vue/web_interface_vue/web_interface_vue.iml" filepath="$PROJECT_DIR$/../web_Interface_vue/web_interface_vue/web_interface_vue/web_interface_vue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../vue_web_interface/new_web_interface_vue/new_web_interface_vue.iml" filepath="$PROJECT_DIR$/../vue_web_interface/new_web_interface_vue/new_web_interface_vue.iml" />
     </modules>
   </component>
 </project>
