@@ -153,7 +153,7 @@ public class MyFirstModelServiceImpl extends ServiceImpl<MyFirstModelMapper, MyF
         if (file.isEmpty()) {
             return "false";
         }
-        String path = "src/main/java/com/markerhub/entity";
+        String path = "src/main/java/com/markerhub/file_Excel";
         String fileName = System.currentTimeMillis() + file.getOriginalFilename();
         File dest = new File(new File(path).getAbsolutePath() + "/" + fileName);
         if (!dest.getParentFile().exists()) {
