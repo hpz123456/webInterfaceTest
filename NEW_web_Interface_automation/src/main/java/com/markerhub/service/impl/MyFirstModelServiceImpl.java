@@ -6,6 +6,7 @@ import com.markerhub.mapper.MyFirstModelMapper;
 import com.markerhub.service.MyFirstModelService;
 import com.markerhub.tool.ExcelUtil;
 import com.markerhub.tool.MathUtils;
+import com.markerhub.tool.StringUtils;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -63,14 +64,19 @@ public class MyFirstModelServiceImpl extends ServiceImpl<MyFirstModelMapper, MyF
     //修改测试用例
     @Override
     public void updateCase(MyFirstModel myFirstModel) {
-
-        myFirstModelMapper.updateCase(myFirstModel);
+        List<MyFirstModel> list = new ArrayList<MyFirstModel>();
+        list.add(myFirstModel);
+        list = formatting(list);
+        for (MyFirstModel m : list) {
+            myFirstModelMapper.updateCase(m);
+        }
+//        myFirstModelMapper.updateCase(formatting(myFirstModel));
     }
 
     //批量新增用例
     @Override
     public void saveMoreModification(List<MyFirstModel> myFirstModel_list) {
-        myFirstModelMapper.saveMoreModification(myFirstModel_list);
+        myFirstModelMapper.saveMoreModification(formatting(myFirstModel_list));
     }
 
 
@@ -85,12 +91,40 @@ public class MyFirstModelServiceImpl extends ServiceImpl<MyFirstModelMapper, MyF
             if (myFirstModel_list.isEmpty()) {
                 continue;
             }
-            myFirstModelMapper.saveMoreModification(myFirstModel_list);
+            myFirstModelMapper.saveMoreModification(formatting(myFirstModel_list));
         }
         String fpath = path + "\\" + file_name;
         File f = new File(fpath);
         f.delete();
     }
+
+    public static List<MyFirstModel> formatting(List<MyFirstModel> myFirstModel_list) {
+//        List<MyFirstModel> list = new ArrayList<MyFirstModel>();
+        for (MyFirstModel myFirstModel : myFirstModel_list) {
+            myFirstModel.setCaseId(StringUtils.replaceBlank(myFirstModel.getCaseId()));
+            myFirstModel.setProjectName(StringUtils.replaceBlank(myFirstModel.getProjectName()));
+            myFirstModel.setSubordinateModule(StringUtils.replaceBlank(myFirstModel.getSubordinateModule()));
+            myFirstModel.setCaseName(StringUtils.replaceBlank(myFirstModel.getCaseName()));
+            myFirstModel.setHeader(StringUtils.replaceBlank(myFirstModel.getHeader()));
+            myFirstModel.setData(StringUtils.replaceBlank(myFirstModel.getData()));
+            myFirstModel.setParams(StringUtils.replaceBlank(myFirstModel.getParams()));
+            myFirstModel.setRequestMethod(StringUtils.replaceBlank(myFirstModel.getRequestMethod()));
+            myFirstModel.setCookie(StringUtils.replaceBlank(myFirstModel.getCookie()));
+            myFirstModel.setCaseDescription(StringUtils.replaceBlank(myFirstModel.getCaseDescription()));
+            myFirstModel.setToken(StringUtils.replaceBlank(myFirstModel.getToken()));
+            myFirstModel.setDependData(StringUtils.replaceBlank(myFirstModel.getDependData()));
+            myFirstModel.setListAssert(StringUtils.replaceBlank(myFirstModel.getListAssert()));
+            myFirstModel.setListVagueAssert(StringUtils.replaceBlank(myFirstModel.getListVagueAssert()));
+            myFirstModel.setCommonAssert(StringUtils.replaceBlank(myFirstModel.getCommonAssert()));
+            myFirstModel.setGetCookie(StringUtils.replaceBlank(myFirstModel.getGetCookie()));
+            myFirstModel.setRemark(StringUtils.replaceBlank(myFirstModel.getRemark()));
+            myFirstModel.setAssertResult(StringUtils.replaceBlank(myFirstModel.getAssertResult()));
+            myFirstModel.setEditor(StringUtils.replaceBlank(myFirstModel.getEditor()));
+            myFirstModel.setPerformer(StringUtils.replaceBlank(myFirstModel.getPerformer()));
+        }
+        return myFirstModel_list;
+    }
+
 
     //获取文件sheet页
     public Integer sheet_list(String path, String file_name) {
@@ -166,6 +200,15 @@ public class MyFirstModelServiceImpl extends ServiceImpl<MyFirstModelMapper, MyF
             e.printStackTrace();
             return "false";
         }
+    }
+
+    @Override
+    public List<MyFirstModel> excuteCase(List<String> caseid_list) {
+
+        List<MyFirstModel> myFirstModels_list = myFirstModelMapper.findById(caseid_list);
+
+
+        return myFirstModels_list;
     }
 
 }

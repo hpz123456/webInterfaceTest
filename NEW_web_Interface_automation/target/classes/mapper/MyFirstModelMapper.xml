@@ -216,6 +216,11 @@
     <!--            #{dept.createTime,jdbcType=TIMESTAMP})-->
     <!--        </foreach>-->
     <!--    </insert>-->
-
+    <select id="findById" resultType="com.markerhub.entity.MyFirstModel" parameterType="java.util.List">
+        select * from my_first_model where id in
+        <foreach item="item" collection="list" open="(" separator="," close=")">
+            "${item}"
+        </foreach>
+    </select>
 
 </mapper>

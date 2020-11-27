@@ -95,7 +95,7 @@ public class MyFirstModelController {
         myFirstModelService.updateCase(myFirstModel);
         return Result.succ(200, "操作成功", null);
     }
-    
+
 
     /**
      * 下载用户导入模板
@@ -152,6 +152,14 @@ public class MyFirstModelController {
                 e.printStackTrace();
             }
         }
+    }
+
+    @PostMapping("/excuteCase")
+    public Result excuteCase(@RequestBody List<String> caseid_list) {
+
+        List<MyFirstModel> myFirstModelsList = myFirstModelService.excuteCase(caseid_list);
+
+        return null;
     }
 
 }
