@@ -31,9 +31,9 @@ public class UserController {
         paramMap.put("to", to);
         paramMap.put("from", from);
         String url = "http://zxjt.weiyingjia.org/msgapi/bothway";
-        String result = requestPost.doPost(url, paramMap, "utf-8");
-        System.out.print(result);
-        return result;
+//        String result = requestPost.doPost(url, paramMap, "utf-8");
+//        System.out.print(result);
+        return null;
     }
 
 }
