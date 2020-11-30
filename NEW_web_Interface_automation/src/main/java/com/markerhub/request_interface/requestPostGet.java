@@ -11,28 +11,28 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.cookie.Cookie;
+import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
-import java.io.IOException;
-import java.net.*;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class requestPostGet{
+public class requestPostGet {
     //进行get请求
-    public static requestReturn requestGet(String url, Map<String,String> header, Map<String,String> params, Map<String,String> data,String getCookie,CookieStore cookieStore) throws Exception {
+    public static requestReturn requestGet(String url, Map<String, String> header, Map<String, String> params, String getCookie, CookieStore cookieStore) throws Exception {
         //创建一个httpclient对象
         DefaultHttpClient httpClient = null;
-        if(requestPostGet.HttpOrHttps(url)){
+        if (requestPostGet.HttpOrHttps(url)) {
             httpClient = new DefaultHttpClient();
-        }else {
+        } else {
             httpClient = new SSLClient();
         }
 
@@ -45,12 +45,7 @@ public class requestPostGet{
                 uriBuilder.addParameter(key, params.get(key));
             }
         }
-        if (data != null) {
-            for (String key : data.keySet()) {
-                uriBuilder.addParameter(key, data.get(key));
-            }
-        }
-        if(cookieStore != null){
+        if (cookieStore != null) {
             httpClient.setCookieStore(cookieStore);
         }
         //创建http请求
@@ -72,7 +67,7 @@ public class requestPostGet{
         Header[] allheaders = response.getAllHeaders();
         //cookie
         List<Cookie> cookieList = null;
-        if (getCookie != null && getCookie != ""){
+        if (getCookie != null && getCookie != "") {
             cookieList = requestPostGet.getCookie(httpClient);
         }
 
@@ -86,15 +81,18 @@ public class requestPostGet{
         httpClient.close();
         return re;
     }
+
     //进行post请求
-    public requestReturn requestPost(String url,Map<String,String> header,Map<String,String> params,Map<String,String> data,CookieStore cookieStore) throws Exception {
+    public static requestReturn requestPost(String url, Map<String, String> header, Map<String, String> params, String data, CookieStore cookieStore) throws Exception {
         //创建一个httpclient对象
         DefaultHttpClient httpClient = null;
-        if(requestPostGet.HttpOrHttps(url)){
+        if (requestPostGet.HttpOrHttps(url)) {
             httpClient = new DefaultHttpClient();
-        }else {
+        } else {
             httpClient = new SSLClient();
         }
+
+        StringEntity entity;
         //创建一个post对象
         HttpPost post = new HttpPost(url);
         //添加header
@@ -110,20 +108,19 @@ public class requestPostGet{
             for (String key : params.keySet()) {
                 kvList.add(new BasicNameValuePair(key, params.get(key)));
             }
-        }
-        if (data != null) {
-            for (String key : data.keySet()) {
-                kvList.add(new BasicNameValuePair(key, data.get(key)));
-            }
+            //包装成一个Entity对象
+            entity = new UrlEncodedFormEntity(kvList, "utf-8");
         }
 
-        if(cookieStore != null){
+        if (data != null & data != "") {
+            entity = new StringEntity(data, ContentType.APPLICATION_JSON);
+            post.setEntity(entity);
+        }
+
+        if (cookieStore != null) {
             httpClient.setCookieStore(cookieStore);
         }
-        //包装成一个Entity对象
-        StringEntity entity = new UrlEncodedFormEntity(kvList, "utf-8");
-        //设置请求的内容
-        post.setEntity(entity);
+
         //执行post请求
         CloseableHttpResponse response = httpClient.execute(post);
         //body
@@ -143,21 +140,23 @@ public class requestPostGet{
     }
 
     //获取cookie
-    public static List<Cookie> getCookie(DefaultHttpClient httpClient){
+    public static List<Cookie> getCookie(DefaultHttpClient httpClient) {
         CookieStore store = httpClient.getCookieStore();
         List<Cookie> cookieList = store.getCookies();
         return cookieList;
     }
+
     //获取token
-    public Map<String,String> getToken(){
+    public Map<String, String> getToken() {
 
         return null;
     }
 
     /**
      * 判断url是http还是https
+     *
      * @param httpUrl
-     * @return  true:http false:https
+     * @return true:http false:https
      * @throws MalformedURLException
      * @throws URISyntaxException
      */
@@ -172,7 +171,7 @@ public class requestPostGet{
 
 
     public static void main(String[] args) throws Exception {
-        requestReturn re = requestPostGet.requestGet("http://www.baidu.com", null, null, null,"y",null);
+        requestReturn re = requestPostGet.requestPost("http://127.0.0.1:8081/my-first-model/deleteList", null, null, "[\"1017250775\",\"1017540888\"]", null);
         System.out.println(re.getCaseBody());
         System.out.println(re.getCookieList());
 

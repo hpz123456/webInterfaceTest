@@ -33,4 +33,6 @@ public interface MyFirstModelService extends IService<MyFirstModel> {
     void batchSaveModification(MultipartFile file);
 
     List<MyFirstModel> excuteCase(List<String> caseid_list);
+
+    List<MyFirstModel> batchExecutionCase(List<String> caseid_list);
 }

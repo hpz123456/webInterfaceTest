@@ -162,5 +162,14 @@ public class MyFirstModelController {
         return null;
     }
 
+
+    //接口自动化
+    @PostMapping("/batchExecutionCase")
+    public Result batchExecutionCase(@RequestBody List<String> caseid_list) {
+
+        List<MyFirstModel> myFirstModelList = myFirstModelService.batchExecutionCase(caseid_list);
+        return Result.succ(200, "操作成功", myFirstModelList);
+    }
+
 }
 

@@ -1,7 +1,9 @@
 package com.markerhub.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.markerhub.caseTestNG.Entry;
 import com.markerhub.entity.MyFirstModel;
+import com.markerhub.entity.caseModel;
 import com.markerhub.mapper.MyFirstModelMapper;
 import com.markerhub.service.MyFirstModelService;
 import com.markerhub.tool.ExcelUtil;
@@ -209,6 +211,24 @@ public class MyFirstModelServiceImpl extends ServiceImpl<MyFirstModelMapper, MyF
 
 
         return myFirstModels_list;
+    }
+
+
+    @Override
+    public List<MyFirstModel> batchExecutionCase(List<String> caseid_list) {
+        //查找选中的case,并放入caseModel
+        caseModel.testCase = myFirstModelMapper.findById(caseid_list);
+        //初始化returnTestCase
+        caseModel.returnTestCase = new ArrayList<MyFirstModel>();
+        //调用Entry开始testNG
+        Entry.callTestNG();
+        //调用结束后拿到返回结果
+        List<MyFirstModel> returnMyFirstModelList = caseModel.returnTestCase;
+        //执行结束后清除caseModel,objects,returnTestCase;
+        caseModel.testCase = null;
+        Entry.objects = null;
+
+        return returnMyFirstModelList;
     }
 
 }

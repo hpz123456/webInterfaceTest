@@ -1,61 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Command line suite" duration-ms="65" started-at="2020-11-19T06:14:45Z" finished-at="2020-11-19T06:14:45Z">
+  <suite name="Command line suite" duration-ms="31" started-at="2020-11-30T07:14:08Z" finished-at="2020-11-30T07:14:08Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="65" started-at="2020-11-19T06:14:45Z" finished-at="2020-11-19T06:14:45Z">
-      <class name="com.markerhub.service.impl.testservice">
-        <test-method status="PASS" signature="testDataProvider(java.lang.String, int)[pri:0, instance:com.markerhub.service.impl.testservice@6833ce2c]" name="testDataProvider" duration-ms="14" started-at="2020-11-19T06:14:45Z" data-provider="data" finished-at="2020-11-19T06:14:45Z">
+    <test name="Command line test" duration-ms="31" started-at="2020-11-30T07:14:08Z" finished-at="2020-11-30T07:14:08Z">
+      <class name="com.markerhub.caseTestNG.testservice">
+        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@78049775]" name="testDataProvider" duration-ms="5" started-at="2020-11-30T07:14:08Z" data-provider="data" finished-at="2020-11-30T07:14:08Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[zhangsan]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[10]]>
+                <![CDATA[MyFirstModel{id='1018020401', caseId='17', projectName='123456805', subordinateModule='139', caseName='21337', url='casasdsade_name', header='wwvcxvw', data='213229', params='sadsa', requestMethod='gffd', cookie='khj', caseDescription='rgtre', token='mkuk', dependData='wqeqwe', listAssert='wqewqe', listVagueAssert='wqeqw', commonAssert='wqewq', getCookie='wqeqwe', remark='wqeqwe', assertResult='null', editor='wqewqe', performer='2213229'}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDataProvider -->
-        <test-method status="PASS" signature="testDataProvider(java.lang.String, int)[pri:0, instance:com.markerhub.service.impl.testservice@6833ce2c]" name="testDataProvider" duration-ms="1" started-at="2020-11-19T06:14:45Z" data-provider="data" finished-at="2020-11-19T06:14:45Z">
+        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@78049775]" name="testDataProvider" duration-ms="0" started-at="2020-11-30T07:14:08Z" data-provider="data" finished-at="2020-11-30T07:14:08Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[lisi]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[20]]>
+                <![CDATA[MyFirstModel{id='1018457942', caseId='15', projectName='123456803', subordinateModule='137', caseName='21335', url='casasdsade_name', header='wwvcxvw', data='213227', params='sadsa', requestMethod='gffd', cookie='khj', caseDescription='rgtre', token='mkuk', dependData='wqeqwe', listAssert='wqewqe', listVagueAssert='wqeqw', commonAssert='wqewq', getCookie='wqeqwe', remark='wqeqwe', assertResult='null', editor='wqewqe', performer='2213227'}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDataProvider -->
-        <test-method status="PASS" signature="testDataProvider(java.lang.String, int)[pri:0, instance:com.markerhub.service.impl.testservice@6833ce2c]" name="testDataProvider" duration-ms="0" started-at="2020-11-19T06:14:45Z" data-provider="data" finished-at="2020-11-19T06:14:45Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[wangwu]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[30]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDataProvider -->
-      </class> <!-- com.markerhub.service.impl.testservice -->
+      </class> <!-- com.markerhub.caseTestNG.testservice -->
     </test> <!-- Command line test -->
   </suite> <!-- Command line suite -->
 </testng-results>
