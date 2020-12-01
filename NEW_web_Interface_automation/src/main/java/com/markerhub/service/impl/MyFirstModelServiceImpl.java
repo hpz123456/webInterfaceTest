@@ -220,6 +220,8 @@ public class MyFirstModelServiceImpl extends ServiceImpl<MyFirstModelMapper, MyF
         caseModel.testCase = myFirstModelMapper.findById(caseid_list);
         //初始化returnTestCase
         caseModel.returnTestCase = new ArrayList<MyFirstModel>();
+        //用例数据重洗
+        caseModel.listStort();
         //调用Entry开始testNG
         Entry.callTestNG();
         //调用结束后拿到返回结果
