@@ -20,9 +20,10 @@ public class testservice {
     }
 
     @Test(dataProvider = "data")
-    public void testDataProvider(MyFirstModel myFirstModel) {
+    public void testDataProvider(MyFirstModel myFirstModel) throws Exception {
         System.out.println(myFirstModel);
-        caseModel.returnTestCase.add(myFirstModel);
+        MyFirstModel myFirstModel1 = parameterDispose.startRequest(myFirstModel);
+        caseModel.returnTestCase.add(myFirstModel1);
 
     }
 

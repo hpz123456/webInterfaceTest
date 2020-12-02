@@ -10,7 +10,6 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.cookie.Cookie;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -66,7 +65,7 @@ public class requestPostGet {
         //headers
         Header[] allheaders = response.getAllHeaders();
         //cookie
-        List<Cookie> cookieList = null;
+        CookieStore cookieList = null;
         if (getCookie != null && getCookie != "") {
             cookieList = requestPostGet.getCookie(httpClient);
         }
@@ -83,7 +82,7 @@ public class requestPostGet {
     }
 
     //进行post请求
-    public static requestReturn requestPost(String url, Map<String, String> header, Map<String, String> params, String data, CookieStore cookieStore) throws Exception {
+    public static requestReturn requestPost(String url, Map<String, String> header, Map<String, String> params, String data, CookieStore cookieStore, String getCookie) throws Exception {
         //创建一个httpclient对象
         DefaultHttpClient httpClient = null;
         if (requestPostGet.HttpOrHttps(url)) {
@@ -129,21 +128,28 @@ public class requestPostGet {
         int statusCode = response.getStatusLine().getStatusCode();
 //        headers
         Header[] allheaders = response.getAllHeaders();
-
+        //cookie
+        CookieStore cookieList = null;
+        if (getCookie != null && getCookie != "") {
+            cookieList = requestPostGet.getCookie(httpClient);
+        }
         requestReturn re = new requestReturn();
         re.setAllheaders(allheaders);
         re.setCaseBody(EntityUtils.toString(body, "utf-8"));
+        System.out.println(EntityUtils.toString(body, "utf-8"));
+        String st = EntityUtils.toString(body, "utf-8");
         re.setStatusCode(statusCode);
+        re.setCookieList(cookieList);
         response.close();
         httpClient.close();
         return re;
     }
 
     //获取cookie
-    public static List<Cookie> getCookie(DefaultHttpClient httpClient) {
+    public static CookieStore getCookie(DefaultHttpClient httpClient) {
         CookieStore store = httpClient.getCookieStore();
-        List<Cookie> cookieList = store.getCookies();
-        return cookieList;
+//        List<Cookie> cookieList = store.getCookies();
+        return store;
     }
 
     //获取token
@@ -171,9 +177,9 @@ public class requestPostGet {
 
 
     public static void main(String[] args) throws Exception {
-        requestReturn re = requestPostGet.requestPost("http://127.0.0.1:8081/my-first-model/deleteList", null, null, "[\"1017250775\",\"1017540888\"]", null);
-        System.out.println(re.getCaseBody());
-        System.out.println(re.getCookieList());
+//        requestReturn re = requestPostGet.requestPost("http://127.0.0.1:8081/my-first-model/deleteList", null, null, "[\"1017250775\",\"1017540888\"]", null);
+//        System.out.println(re.getCaseBody());
+//        System.out.println(re.getCookieList());
 
     }
 }

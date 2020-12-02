@@ -35,7 +35,7 @@ public class caseModel {
         for (String st : caseNameIdDe) {
             List<MyFirstModel> myf = new ArrayList<MyFirstModel>();
             for (MyFirstModel my : testCase) {
-                if (st.equals(my.getCaseId())) {
+                if (st.equals(my.getCaseId().split("-")[0])) {
                     myf.add(my);
                 }
             }

@@ -1,13 +1,16 @@
 package com.markerhub.entity;
 
-import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import org.apache.http.client.CookieStore;
+
+import java.io.Serializable;
+import java.util.Map;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 关注公众号：MarkerHub
@@ -64,6 +67,35 @@ public class MyFirstModel implements Serializable {
 
     private String performer;
 
+    private CookieStore cookieStore;
+
+    private Map<String, String> parameterToken;
+
+    private String requestResult;
+
+    public String getRequestResult() {
+        return requestResult;
+    }
+
+    public void setRequestResult(String requestResult) {
+        this.requestResult = requestResult;
+    }
+
+    public CookieStore getCookieStore() {
+        return cookieStore;
+    }
+
+    public void setCookieStore(CookieStore cookieStore) {
+        this.cookieStore = cookieStore;
+    }
+
+    public Map<String, String> getParameterToken() {
+        return parameterToken;
+    }
+
+    public void setParameterToken(Map<String, String> parameterToken) {
+        this.parameterToken = parameterToken;
+    }
 
     public static long getSerialVersionUID() {
         return serialVersionUID;

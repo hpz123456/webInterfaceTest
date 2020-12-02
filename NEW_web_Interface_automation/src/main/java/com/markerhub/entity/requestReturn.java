@@ -1,10 +1,7 @@
 package com.markerhub.entity;
 
 import org.apache.http.Header;
-import org.apache.http.HttpEntity;
-import org.apache.http.cookie.Cookie;
-
-import java.util.List;
+import org.apache.http.client.CookieStore;
 
 /**
  * 接受请求接口返回值
@@ -18,13 +15,13 @@ public class requestReturn {
     //headers
     public Header[] allheaders;
     //cookie
-    public List<Cookie> cookieList;
+    public CookieStore cookieList;
 
-    public List<Cookie> getCookieList() {
+    public CookieStore getCookieList() {
         return cookieList;
     }
 
-    public void setCookieList(List<Cookie> cookieList) {
+    public void setCookieList(CookieStore cookieList) {
         this.cookieList = cookieList;
     }
 
