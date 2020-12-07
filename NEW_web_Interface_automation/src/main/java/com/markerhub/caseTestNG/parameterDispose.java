@@ -86,26 +86,26 @@ public class parameterDispose {
         }
 
 
-        //入参数据都为空
-        if (my.getRequestMethod().equals("post") && my.getToken().isEmpty() && my.getCookie().isEmpty()) {
-            requestPostGet.requestPost(
-                    my.getUrl(),
-                    StringJsonMap.StMap(my.getHeader()),
-                    StringJsonMap.StMap(my.getParams()),
-                    my.getData(),
-                    null,
-                    null);
-        }
-        //cookie不为空
-        if (my.getRequestMethod().equals("post") && my.getToken().isEmpty() && !my.getCookie().isEmpty()) {
-            requestPostGet.requestPost(
-                    my.getUrl(),
-                    StringJsonMap.StMap(my.getHeader()),
-                    StringJsonMap.StMap(my.getParams()),
-                    my.getData(),
-                    my.getCookieStore(),
-                    null);
-        }
+//        //入参数据都为空
+//        if (my.getRequestMethod().equals("post") && my.getToken().isEmpty() && my.getCookie().isEmpty()) {
+//            requestPostGet.requestPost(
+//                    my.getUrl(),
+//                    StringJsonMap.StMap(my.getHeader()),
+//                    StringJsonMap.StMap(my.getParams()),
+//                    my.getData(),
+//                    null,
+//                    null);
+//        }
+//        //cookie不为空
+//        if (my.getRequestMethod().equals("post") && my.getToken().isEmpty() && !my.getCookie().isEmpty()) {
+//            requestPostGet.requestPost(
+//                    my.getUrl(),
+//                    StringJsonMap.StMap(my.getHeader()),
+//                    StringJsonMap.StMap(my.getParams()),
+//                    my.getData(),
+//                    my.getCookieStore(),
+//                    null);
+//        }
         //定义返回值
         requestReturn requestReturn = null;
         if (my.getRequestMethod().equals("POST")) {

@@ -133,11 +133,14 @@ public class requestPostGet {
         if (getCookie != null && getCookie != "") {
             cookieList = requestPostGet.getCookie(httpClient);
         }
+//        String st = EntityUtils.toString(body, "utf-8");
         requestReturn re = new requestReturn();
         re.setAllheaders(allheaders);
         re.setCaseBody(EntityUtils.toString(body, "utf-8"));
-        System.out.println(EntityUtils.toString(body, "utf-8"));
-        String st = EntityUtils.toString(body, "utf-8");
+//        System.out.println(EntityUtils.toString(body, "utf-8"));
+
+
+//        EntityUtils.toString(response.getEntity(), "utf-8");
         re.setStatusCode(statusCode);
         re.setCookieList(cookieList);
         response.close();

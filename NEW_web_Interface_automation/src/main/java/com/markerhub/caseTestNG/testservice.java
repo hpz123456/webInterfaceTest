@@ -12,7 +12,7 @@ public class testservice {
 
     @DataProvider(name = "data")
     public Object[][] providerData() {
-        System.out.println("cs");
+//        System.out.println("cs");
         Object[][] o = entry.objects;
 
 

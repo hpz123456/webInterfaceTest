@@ -130,27 +130,27 @@
 
     <update id="updateCase" parameterType="com.markerhub.entity.MyFirstModel">
         update my_first_model
-        <trim prefix="set" suffixOverrides=",">
-            <if test="caseId!=null">case_id=${caseId},</if>
-            <if test="projectName!=null">project_name=${projectName},</if>
-            <if test="subordinateModule!=null">subordinate_module=${subordinateModule},</if>
-            <if test="caseName!=null">case_name=${caseName},</if>
-            <if test="url!=null">url=${url},</if>
-            <if test="header!=null">header=${header},</if>
-            <if test="params!=null">params=${params},</if>
-            <if test="requestMethod!=null">request_method=${requestMethod},</if>
-            <if test="caseDescription!=null">case_description=${caseDescription},</if>
-            <if test="dependData!=null">depend_data=${dependData},</if>
-            <if test="listAssert!=null">list_assert=${listAssert},</if>
-            <if test="listVagueAssert!=null">list_vague_assert=${listVagueAssert},</if>
-            <if test="commonAssert!=null">common_assert=${commonAssert},</if>
-            <if test="getCookie!=null">get_cookie=${getCookie},</if>
-            <if test="assertResult!=null">assert_result=${assertResult},</if>
-            <if test="editor!=null">editor=${editor},</if>
-            <if test="performer!=null">performer=${performer}</if>
-        </trim>
-        WHERE id=#{id}
-    </update>
+        set
+        project_name="${projectName}",
+        subordinate_module="${subordinateModule}",
+        case_name="${caseName}",
+        data="${data}",
+        url="${url}",
+        header="${header}",
+        params="${params}",
+        request_method="${requestMethod}",
+        case_description="${caseDescription}",
+        depend_data="${dependData}",
+        list_assert="${listAssert}",
+        list_vague_assert="${listVagueAssert}",
+        common_assert="${commonAssert}",
+        get_cookie="${getCookie}",
+        assert_result="${assertResult}",
+        editor="${editor}",
+        performer="${performer}"
+
+        WHERE id="${id}"
+        </update>
 
 
     <!-- 批量插入内容 -->

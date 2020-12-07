@@ -27,6 +27,7 @@ public class Entry {
         Class[] classes = {testservice.class};
         testNG.setTestClasses(classes);
         testNG.run();
+        System.out.println("结束");
     }
 
     //将参数传到这个类
@@ -37,6 +38,12 @@ public class Entry {
         for (Integer i = 0; i < count; i++) {
             objects[i][0] = mf.get(i);
         }
+//        objects = new Object[5][1];
+//        for (Integer i = 0; i < 5; i++) {
+//            objects[i][0] = i;
+//        }
+//        System.out.println(objects.length);
+
     }
 
     public static void main(String[] args) {
