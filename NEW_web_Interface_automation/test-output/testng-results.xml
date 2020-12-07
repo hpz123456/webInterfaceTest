@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Command line suite" duration-ms="23" started-at="2020-12-07T07:28:11Z" finished-at="2020-12-07T07:28:11Z">
+  <suite name="Command line suite" duration-ms="21" started-at="2020-12-07T08:05:17Z" finished-at="2020-12-07T08:05:17Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="23" started-at="2020-12-07T07:28:11Z" finished-at="2020-12-07T07:28:11Z">
+    <test name="Command line test" duration-ms="21" started-at="2020-12-07T08:05:17Z" finished-at="2020-12-07T08:05:17Z">
       <class name="com.markerhub.caseTestNG.testservice">
-        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@2c893f65]" name="testDataProvider" duration-ms="22" started-at="2020-12-07T07:28:11Z" data-provider="data" finished-at="2020-12-07T07:28:11Z">
+        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@2f8f6dc6]" name="testDataProvider" duration-ms="18" started-at="2020-12-07T08:05:17Z" data-provider="data" finished-at="2020-12-07T08:05:17Z">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDataProvider -->
-        <test-method status="FAIL" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@2c893f65]" name="testDataProvider" duration-ms="1" started-at="2020-12-07T07:28:11Z" data-provider="data" finished-at="2020-12-07T07:28:11Z">
+        <test-method status="FAIL" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@2f8f6dc6]" name="testDataProvider" duration-ms="1" started-at="2020-12-07T08:05:17Z" data-provider="data" finished-at="2020-12-07T08:05:17Z">
           <params>
             <param index="0">
               <value>
