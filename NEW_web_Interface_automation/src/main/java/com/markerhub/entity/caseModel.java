@@ -48,7 +48,7 @@ public class caseModel {
         testCseSourt(TY);
         //将PT排序，并挨个放入testCase
         for (List<MyFirstModel> m : PTCaseList) {
-            List<MyFirstModel> PT = sourtListMyFirstModelTY(m);
+            List<MyFirstModel> PT = sourtListMyFirstModelPT(m);
             testCseSourt(PT);
         }
     }

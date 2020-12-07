@@ -1,5 +1,6 @@
 package com.markerhub.caseTestNG;
 
+import com.markerhub.ExceptionCustom.BusinessLogicException;
 import com.markerhub.entity.MyFirstModel;
 import com.markerhub.entity.requestReturn;
 import com.markerhub.request_interface.requestPostGet;
@@ -26,7 +27,11 @@ public class parameterDispose {
         //判断请求头是否为空
         if (!my.getHeader().isEmpty()) {
             //不为空，将实例中的header转换为map赋值给入参header
-            header = StringJsonMap.StMap(my.getHeader());
+            try {
+                header = StringJsonMap.StMap(my.getHeader());
+            } catch (Exception e) {
+                throw new BusinessLogicException(my, "header格式错误");
+            }
         }
 
         //判断是否有token，如果有，就添加token，并放入header中
@@ -51,11 +56,16 @@ public class parameterDispose {
         //获取数据依赖
         if (!my.getDependData().isEmpty()) {
             //获得依赖数据
-            ylmap = GetSetData.dataDependence(my.getDependData());
+            ylmap = GetSetData.dataDependence(my, my.getDependData());
         }
         //处理params
         if (!my.getParams().isEmpty()) {
-            params = StringJsonMap.StMap(my.getParams());
+            try {
+                params = StringJsonMap.StMap(my.getParams());
+            } catch (Exception e) {
+                throw new BusinessLogicException(my, "params格式错误");
+            }
+
         }
         //将依赖数据放入请求体param
         if (ylmap != null && my.getRequestMethod().equals("GET")) {
@@ -73,13 +83,17 @@ public class parameterDispose {
 
         //将依赖数据放入请求体data
         if (ylmap != null && my.getRequestMethod().equals("POST")) {
-            if (data.isEmpty()) {
-                data = StringUtils.replaceBlank(ylmap.toString().replace("=", ":"));
-            } else {
-                //将data转换成map
-                Map<String, String> dataMap = StringJsonMap.StMap(my.getData());
-                dataMap.putAll(ylmap);
-                data = StringUtils.replaceBlank(dataMap.toString().replace("=", ":"));
+            try {
+                if (data.isEmpty()) {
+                    data = StringUtils.replaceBlank(ylmap.toString().replace("=", ":"));
+                } else {
+                    //将data转换成map
+                    Map<String, String> dataMap = StringJsonMap.StMap(my.getData());
+                    dataMap.putAll(ylmap);
+                    data = StringUtils.replaceBlank(dataMap.toString().replace("=", ":"));
+                }
+            } catch (Exception e) {
+                throw new BusinessLogicException(my, "data数据格式错误");
             }
 
 

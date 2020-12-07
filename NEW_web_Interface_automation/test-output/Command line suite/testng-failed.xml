@@ -5,7 +5,7 @@
     <classes>
       <class name="com.markerhub.caseTestNG.testservice">
         <methods>
-          <include name="testDataProvider" invocation-numbers="0"/>
+          <include name="testDataProvider" invocation-numbers="1"/>
         </methods>
       </class> <!-- com.markerhub.caseTestNG.testservice -->
     </classes>
