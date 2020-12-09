@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>TestNG:  Command line test</title>
+<title>TestNG:  管理端app接口项目测试</title>
 <link href="../testng.css" rel="stylesheet" type="text/css" />
 <link href="../my-testng.css" rel="stylesheet" type="text/css" />
 
@@ -53,13 +53,13 @@ function toggleAllBoxes() {
 
 </head>
 <body>
-<h2 align='center'>Command line test</h2><table border='1' align="center">
+<h2 align='center'>管理端app接口项目测试</h2><table border='1' align="center">
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Dec 09 13:47:11 CST 2020</td>
+<td>Started on:</td><td>Wed Dec 09 14:50:17 CST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (671 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (755 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -78,9 +78,9 @@ function toggleAllBoxes() {
 <td title='com.markerhub.caseTestNG.testservice.testDataProvider()'><b>testDataProvider</b><br>Test class: com.markerhub.caseTestNG.testservice<br>Parameters: MyFirstModel{id='4997132980', caseId='test-2', projectName='测试1', subordinateModule='测试1', caseName='测试1', url='http://127.0.0.1:8081/my-first-model/findCase', header='{Content-Type:application/json}', data='{}', params='', requestMethod='POST', cookie='', caseDescription='', token='', dependData='', listAssert='', listVagueAssert='', commonAssert='', getCookie='', remark='', assertResult='null', editor='侯鹏哲', performer='侯鹏哲'}</td>
 <td><div><pre>com.markerhub.ExceptionCustom.BusinessLogicException: header格式错误
 	at com.markerhub.caseTestNG.parameterDispose.startRequest(parameterDispose.java:33)
-	at com.markerhub.caseTestNG.testservice.testDataProvider(testservice.java:25)
-	at com.markerhub.caseTestNG.Entry.callTestNG(Entry.java:29)
-	at com.markerhub.service.impl.MyFirstModelServiceImpl.batchExecutionCase(MyFirstModelServiceImpl.java:226)
+	at com.markerhub.caseTestNG.testservice.testDataProvider(testservice.java:26)
+	at com.markerhub.caseTestNG.Entry.callTestNG(Entry.java:32)
+	at com.markerhub.service.impl.MyFirstModelServiceImpl.batchExecutionCase(MyFirstModelServiceImpl.java:227)
 	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:205)
 	at com.sun.proxy.$Proxy73.batchExecutionCase(Unknown Source)
@@ -131,10 +131,10 @@ function toggleAllBoxes() {
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace443916925", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace443916925'><pre>com.markerhub.ExceptionCustom.BusinessLogicException: header格式错误
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1098031464", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1098031464'><pre>com.markerhub.ExceptionCustom.BusinessLogicException: header格式错误
 	at com.markerhub.caseTestNG.parameterDispose.startRequest(parameterDispose.java:33)
-	at com.markerhub.caseTestNG.testservice.testDataProvider(testservice.java:25)
+	at com.markerhub.caseTestNG.testservice.testDataProvider(testservice.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -157,8 +157,8 @@ function toggleAllBoxes() {
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
 	at org.testng.TestNG.runSuites(TestNG.java:1049)
 	at org.testng.TestNG.run(TestNG.java:1017)
-	at com.markerhub.caseTestNG.Entry.callTestNG(Entry.java:29)
-	at com.markerhub.service.impl.MyFirstModelServiceImpl.batchExecutionCase(MyFirstModelServiceImpl.java:226)
+	at com.markerhub.caseTestNG.Entry.callTestNG(Entry.java:32)
+	at com.markerhub.service.impl.MyFirstModelServiceImpl.batchExecutionCase(MyFirstModelServiceImpl.java:227)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -219,7 +219,7 @@ function toggleAllBoxes() {
 	at java.lang.Thread.run(Thread.java:748)
 </pre></div></td>
 <td>0</td>
-<td>com.markerhub.caseTestNG.testservice@508e100d</td></tr>
+<td>com.markerhub.caseTestNG.testservice@4c591c94</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -232,7 +232,7 @@ function toggleAllBoxes() {
 <td title='com.markerhub.caseTestNG.testservice.testDataProvider()'><b>testDataProvider</b><br>Test class: com.markerhub.caseTestNG.testservice<br>Parameters: MyFirstModel{id='1828443672', caseId='test-1', projectName='测试', subordinateModule='测试', caseName='{}', url='http://127.0.0.1:8081/my-first-model/findCase', header='', data='{}', params='', requestMethod='POST', cookie='', caseDescription='', token='', dependData='', listAssert='', listVagueAssert='', commonAssert='', getCookie='', remark='', assertResult='', editor='侯鹏哲', performer='侯鹏哲'}</td>
 <td></td>
 <td>0</td>
-<td>com.markerhub.caseTestNG.testservice@508e100d</td></tr>
+<td>com.markerhub.caseTestNG.testservice@4c591c94</td></tr>
 </table><p>
 </body>
 </html>

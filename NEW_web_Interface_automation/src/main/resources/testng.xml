@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!-- 执行测试用例，此文件捕获整个测试XML -->
+<suite name="managertest" verbose="1">
+    <listeners>
+        <!-- class-name的值填写为时间创建的监听器的路径 -->
+        <listener class-name="com.markerhub.Listener.ExtentTestNGIReporterListener"></listener>
+    </listeners>
+
+    <test name="管理端app接口项目测试">
+        <classes>
+            <class name="com.markerhub.caseTestNG.testservice">
+                <methods>
+                    <include name="testDataProvider"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -4,6 +4,7 @@ import com.markerhub.entity.MyFirstModel;
 import com.markerhub.entity.caseModel;
 import org.testng.TestNG;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,7 +12,7 @@ import java.util.List;
  */
 public class Entry {
 
-    public static Object[][] objects;
+//    public static Object[][] objects;
 
 
     public static void callTestNG() {
@@ -22,11 +23,19 @@ public class Entry {
 //        }
         //执行参数传递
         Entry.parameterPassing();
-        //执行testNG
+
         TestNG testNG = new TestNG();
-        Class[] classes = {testservice.class};
-        testNG.setTestClasses(classes);
+        List<String> suites = new ArrayList<String>();
+        suites.add("src/main/resources/testng.xml");
+        //suites.add(".\\test-output\\testng-failed.xml");
+        testNG.setTestSuites(suites);
         testNG.run();
+        //执行testNG
+//        TestNG testNG = new TestNG();
+//        Class[] classes = {testservice.class};
+//        testNG.setTestClasses(classes);
+//        testNG.run();
+        System.out.println(testservice.objects.length);
         System.out.println("结束");
     }
 
@@ -34,9 +43,9 @@ public class Entry {
     private static void parameterPassing() {
         List<MyFirstModel> mf = caseModel.testCase;
         Integer count = mf.size();
-        objects = new Object[count][1];
+        testservice.objects = new Object[count][1];
         for (Integer i = 0; i < count; i++) {
-            objects[i][0] = mf.get(i);
+            testservice.objects[i][0] = mf.get(i);
         }
 //        objects = new Object[5][1];
 //        for (Integer i = 0; i < 5; i++) {

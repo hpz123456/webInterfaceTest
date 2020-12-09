@@ -2,6 +2,7 @@ package com.markerhub.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.markerhub.caseTestNG.Entry;
+import com.markerhub.caseTestNG.testservice;
 import com.markerhub.entity.MyFirstModel;
 import com.markerhub.entity.caseModel;
 import com.markerhub.mapper.MyFirstModelMapper;
@@ -228,7 +229,7 @@ public class MyFirstModelServiceImpl extends ServiceImpl<MyFirstModelMapper, MyF
         List<MyFirstModel> returnMyFirstModelList = caseModel.returnTestCase;
         //执行结束后清除caseModel,objects,returnTestCase;
         caseModel.testCase = null;
-        Entry.objects = null;
+        testservice.objects = null;
 
         return returnMyFirstModelList;
     }

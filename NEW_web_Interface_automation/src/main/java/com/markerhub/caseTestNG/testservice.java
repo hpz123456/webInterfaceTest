@@ -9,14 +9,15 @@ import org.testng.annotations.Test;
 public class testservice {
 
     Entry entry = new Entry();
+    public static Object[][] objects;
 
     @DataProvider(name = "data")
     public Object[][] providerData() {
 //        System.out.println("cs");
-        Object[][] o = entry.objects;
+//        Object[][] o = entry.objects;
 
-
-        return o;
+        System.out.println(objects);
+        return objects;
     }
 
     @Test(dataProvider = "data")
