@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="managertest" duration-ms="15" started-at="2020-12-11T07:10:26Z" finished-at="2020-12-11T07:10:26Z">
+  <suite name="managertest" duration-ms="24" started-at="2020-12-11T07:36:17Z" finished-at="2020-12-11T07:36:17Z">
     <groups>
     </groups>
-    <test name="管理端app接口项目测试" duration-ms="15" started-at="2020-12-11T07:10:26Z" finished-at="2020-12-11T07:10:26Z">
+    <test name="管理端app接口项目测试" duration-ms="24" started-at="2020-12-11T07:36:17Z" finished-at="2020-12-11T07:36:17Z">
       <class name="com.markerhub.caseTestNG.testservice">
-        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@7580059f]" name="testDataProvider" duration-ms="13" started-at="2020-12-11T07:10:26Z" data-provider="data" finished-at="2020-12-11T07:10:26Z">
+        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@6d61b0b2]" name="testDataProvider" duration-ms="22" started-at="2020-12-11T07:36:17Z" data-provider="data" finished-at="2020-12-11T07:36:17Z">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDataProvider -->
-        <test-method status="FAIL" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@7580059f]" name="testDataProvider" duration-ms="1" started-at="2020-12-11T07:10:26Z" data-provider="data" finished-at="2020-12-11T07:10:26Z">
+        <test-method status="FAIL" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@6d61b0b2]" name="testDataProvider" duration-ms="0" started-at="2020-12-11T07:36:17Z" data-provider="data" finished-at="2020-12-11T07:36:17Z">
           <params>
             <param index="0">
               <value>
