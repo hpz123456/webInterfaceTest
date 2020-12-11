@@ -2,27 +2,27 @@
 <testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="managertest" duration-ms="606" started-at="2020-12-09T07:18:10Z" finished-at="2020-12-09T07:18:10Z">
+  <suite name="managertest" duration-ms="15" started-at="2020-12-11T07:10:26Z" finished-at="2020-12-11T07:10:26Z">
     <groups>
     </groups>
-    <test name="管理端app接口项目测试" duration-ms="606" started-at="2020-12-09T07:18:10Z" finished-at="2020-12-09T07:18:10Z">
+    <test name="管理端app接口项目测试" duration-ms="15" started-at="2020-12-11T07:10:26Z" finished-at="2020-12-11T07:10:26Z">
       <class name="com.markerhub.caseTestNG.testservice">
-        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@44f0039e]" name="testDataProvider" duration-ms="553" started-at="2020-12-09T07:18:10Z" data-provider="data" finished-at="2020-12-09T07:18:10Z">
+        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@7580059f]" name="testDataProvider" duration-ms="13" started-at="2020-12-11T07:10:26Z" data-provider="data" finished-at="2020-12-11T07:10:26Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[MyFirstModel{id='1828443672', caseId='test-1', projectName='测试', subordinateModule='测试', caseName='{}', url='http://127.0.0.1:8081/my-first-model/findCase', header='', data='{}', params='', requestMethod='POST', cookie='', caseDescription='', token='', dependData='', listAssert='', listVagueAssert='', commonAssert='', getCookie='', remark='', assertResult='', editor='侯鹏哲', performer='侯鹏哲'}]]>
+                <![CDATA[MyFirstModel{id='1828443672', caseId='test-1', projectName='测试', subordinateModule='测试', caseName='{}', url='http://127.0.0.1:8081/my-first-model/findCase', header='', data='{}', params='', requestMethod='POST', cookie='', caseDescription='', token='', dependData='', listAssert='', listVagueAssert='', commonAssert='', getCookie='', remark='', assertResult='Y', editor='侯鹏哲', performer='侯鹏哲'}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDataProvider -->
-        <test-method status="FAIL" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@44f0039e]" name="testDataProvider" duration-ms="17" started-at="2020-12-09T07:18:10Z" data-provider="data" finished-at="2020-12-09T07:18:10Z">
+        <test-method status="FAIL" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@7580059f]" name="testDataProvider" duration-ms="1" started-at="2020-12-11T07:10:26Z" data-provider="data" finished-at="2020-12-11T07:10:26Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[MyFirstModel{id='4997132980', caseId='test-2', projectName='测试1', subordinateModule='测试1', caseName='测试1', url='http://127.0.0.1:8081/my-first-model/findCase', header='{Content-Type:application/json}', data='{}', params='', requestMethod='POST', cookie='', caseDescription='', token='', dependData='', listAssert='', listVagueAssert='', commonAssert='', getCookie='', remark='', assertResult='null', editor='侯鹏哲', performer='侯鹏哲'}]]>
+                <![CDATA[MyFirstModel{id='4997132980', caseId='test-2', projectName='测试1', subordinateModule='测试1', caseName='测试1', url='http://127.0.0.1:8081/my-first-model/findCase', header='{Content-Type:application/json}', data='{}', params='', requestMethod='POST', cookie='', caseDescription='', token='', dependData='', listAssert='', listVagueAssert='', commonAssert='', getCookie='', remark='', assertResult='N', editor='侯鹏哲', performer='侯鹏哲'}]]>
               </value>
             </param>
           </params>
@@ -34,8 +34,7 @@
               <![CDATA[com.markerhub.ExceptionCustom.BusinessLogicException: header格式错误
 at com.markerhub.caseTestNG.parameterDispose.startRequest(parameterDispose.java:33)
 at com.markerhub.caseTestNG.testservice.testDataProvider(testservice.java:26)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.GeneratedMethodAccessor121.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.lang.reflect.Method.invoke(Method.java:498)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)

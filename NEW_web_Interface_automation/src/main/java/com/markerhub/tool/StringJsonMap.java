@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.jayway.jsonpath.JsonPath;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class StringJsonMap {
@@ -23,6 +24,12 @@ public class StringJsonMap {
     //返回数据解析（json）
     public static Object analysisJsonObject(String json, String analysisCode) {
         Object analysisValue = JsonPath.read(json, analysisCode);
+        return analysisValue;
+    }
+
+    //返回数据解析（json）
+    public static List analysisJsonList(String json, String analysisCode) {
+        List analysisValue = JsonPath.read(json, analysisCode);
         return analysisValue;
     }
 
