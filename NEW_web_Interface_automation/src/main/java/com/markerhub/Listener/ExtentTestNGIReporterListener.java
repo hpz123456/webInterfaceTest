@@ -7,6 +7,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.model.TestAttribute;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
+import com.markerhub.entity.MyFirstModel;
 import org.testng.*;
 import org.testng.xml.XmlSuite;
 
@@ -17,7 +18,7 @@ import java.util.*;
 public class ExtentTestNGIReporterListener implements IReporter {
     //生成的路径以及文件名
     private static final String OUTPUT_FOLDER = "src/main/java/com/markerhub/Listener/test-output1/";
-    private static final String FILE_NAME = "123.html";
+    private static final String FILE_NAME = "测试报告.html";
     private ExtentReports extent;
 
     @Override
@@ -108,10 +109,10 @@ public class ExtentTestNGIReporterListener implements IReporter {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         String str = df.format(date);//获取String类型的时间
         str = str.replace(":", "_");
-        String newNumber = str.replace(" ", "+");
-        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(OUTPUT_FOLDER + newNumber + FILE_NAME);
-        htmlReporter.config().setDocumentTitle("api自动化测试报告");
-        htmlReporter.config().setReportName("api自动化测试报告");
+//        String newNumber = str.replace(" ", "+");
+        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(OUTPUT_FOLDER + str + FILE_NAME);
+        htmlReporter.config().setDocumentTitle("api接口自动化测试报告");
+        htmlReporter.config().setReportName("api接口自动化测试报告");
 
         htmlReporter.config().setChartVisibilityOnOpen(true);
         htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
@@ -154,7 +155,8 @@ public class ExtentTestNGIReporterListener implements IReporter {
 //	                }
                 //如果有参数只取第一个参数作test-name
                 for (int i = 0; i < parameters.length; i++) {
-                    name = parameters[0].toString();
+                    name = ((MyFirstModel) parameters[0]).getCaseId();
+//                    String myFirstModel = ((MyFirstModel)parameters[0]).getCaseId();
                 }
 
                 if (name.length() > 0) {

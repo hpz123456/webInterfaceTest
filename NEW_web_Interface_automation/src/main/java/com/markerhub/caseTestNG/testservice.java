@@ -24,6 +24,7 @@ public class testservice {
     public void testDataProvider(MyFirstModel myFirstModel) throws Exception {
         System.out.println(myFirstModel);
         MyFirstModel myFirstModel1 = parameterDispose.startRequest(myFirstModel);
+        
         caseModel.returnTestCase.add(myFirstModel1);
 
     }

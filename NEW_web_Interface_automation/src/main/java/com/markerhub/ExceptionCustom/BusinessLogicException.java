@@ -21,6 +21,7 @@ public class BusinessLogicException extends Exception {
     public BusinessLogicException(MyFirstModel myFirstModel, String message) {
         super(message);
 //        System.out.println(message);
+        myFirstModel.setAssertResult("N");
         myFirstModel.setRequestResult(message);
         caseModel.returnTestCase.add(myFirstModel);
     }

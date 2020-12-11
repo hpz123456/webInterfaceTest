@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="managertest" duration-ms="755" started-at="2020-12-09T06:50:17Z" finished-at="2020-12-09T06:50:18Z">
+  <suite name="managertest" duration-ms="606" started-at="2020-12-09T07:18:10Z" finished-at="2020-12-09T07:18:10Z">
     <groups>
     </groups>
-    <test name="管理端app接口项目测试" duration-ms="755" started-at="2020-12-09T06:50:17Z" finished-at="2020-12-09T06:50:18Z">
+    <test name="管理端app接口项目测试" duration-ms="606" started-at="2020-12-09T07:18:10Z" finished-at="2020-12-09T07:18:10Z">
       <class name="com.markerhub.caseTestNG.testservice">
-        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@4c591c94]" name="testDataProvider" duration-ms="706" started-at="2020-12-09T06:50:17Z" data-provider="data" finished-at="2020-12-09T06:50:18Z">
+        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@44f0039e]" name="testDataProvider" duration-ms="553" started-at="2020-12-09T07:18:10Z" data-provider="data" finished-at="2020-12-09T07:18:10Z">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDataProvider -->
-        <test-method status="FAIL" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@4c591c94]" name="testDataProvider" duration-ms="8" started-at="2020-12-09T06:50:18Z" data-provider="data" finished-at="2020-12-09T06:50:18Z">
+        <test-method status="FAIL" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@44f0039e]" name="testDataProvider" duration-ms="17" started-at="2020-12-09T07:18:10Z" data-provider="data" finished-at="2020-12-09T07:18:10Z">
           <params>
             <param index="0">
               <value>
