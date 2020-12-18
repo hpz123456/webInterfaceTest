@@ -1,123 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="managertest" duration-ms="24" started-at="2020-12-11T07:36:17Z" finished-at="2020-12-11T07:36:17Z">
+  <suite name="managertest" duration-ms="788" started-at="2020-12-14T07:07:25Z" finished-at="2020-12-14T07:07:26Z">
     <groups>
     </groups>
-    <test name="管理端app接口项目测试" duration-ms="24" started-at="2020-12-11T07:36:17Z" finished-at="2020-12-11T07:36:17Z">
+    <test name="管理端app接口项目测试" duration-ms="788" started-at="2020-12-14T07:07:25Z" finished-at="2020-12-14T07:07:26Z">
       <class name="com.markerhub.caseTestNG.testservice">
-        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@6d61b0b2]" name="testDataProvider" duration-ms="22" started-at="2020-12-11T07:36:17Z" data-provider="data" finished-at="2020-12-11T07:36:17Z">
+        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@4b479fe]" name="testDataProvider" duration-ms="738" started-at="2020-12-14T07:07:25Z" data-provider="data" finished-at="2020-12-14T07:07:26Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[MyFirstModel{id='1828443672', caseId='test-1', projectName='测试', subordinateModule='测试', caseName='{}', url='http://127.0.0.1:8081/my-first-model/findCase', header='', data='{}', params='', requestMethod='POST', cookie='', caseDescription='', token='', dependData='', listAssert='', listVagueAssert='', commonAssert='', getCookie='', remark='', assertResult='Y', editor='侯鹏哲', performer='侯鹏哲'}]]>
+                <![CDATA[MyFirstModel{id='1828443672', caseId='test-1', projectName='测试', subordinateModule='测试', caseName='{}', url='http://127.0.0.1:8081/my-first-model/findCase', header='', data='{"id":"","caseId":"17","projectName":"","subordinateModule":"","caseName":"","url":"","header":"","data":"","params":"","requestMethod":"","cookie":"","caseDescription":"","token":"","dependData":"","listAssert":"","listVagueAssert":"","commonAssert":"","getCookie":"","remark":"","assertResult":"","editor":"","performer":"","cookieStore":null,"parameterToken":null,"requestResult":null}', params='', requestMethod='POST', cookie='', caseDescription='', token='', dependData='', listAssert='', listVagueAssert='', commonAssert='', getCookie='', remark='', assertResult='Y', editor='侯鹏哲', performer='侯鹏哲'}]]>
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDataProvider -->
-        <test-method status="FAIL" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@6d61b0b2]" name="testDataProvider" duration-ms="0" started-at="2020-12-11T07:36:17Z" data-provider="data" finished-at="2020-12-11T07:36:17Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[MyFirstModel{id='4997132980', caseId='test-2', projectName='测试1', subordinateModule='测试1', caseName='测试1', url='http://127.0.0.1:8081/my-first-model/findCase', header='{Content-Type:application/json}', data='{}', params='', requestMethod='POST', cookie='', caseDescription='', token='', dependData='', listAssert='', listVagueAssert='', commonAssert='', getCookie='', remark='', assertResult='N', editor='侯鹏哲', performer='侯鹏哲'}]]>
-              </value>
-            </param>
-          </params>
-          <exception class="com.markerhub.ExceptionCustom.BusinessLogicException">
-            <message>
-              <![CDATA[header格式错误]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.markerhub.ExceptionCustom.BusinessLogicException: header格式错误
-at com.markerhub.caseTestNG.parameterDispose.startRequest(parameterDispose.java:33)
-at com.markerhub.caseTestNG.testservice.testDataProvider(testservice.java:26)
-at sun.reflect.GeneratedMethodAccessor121.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at com.markerhub.caseTestNG.Entry.callTestNG(Entry.java:32)
-at com.markerhub.service.impl.MyFirstModelServiceImpl.batchExecutionCase(MyFirstModelServiceImpl.java:227)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
-at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:205)
-at com.sun.proxy.$Proxy73.batchExecutionCase(Unknown Source)
-at com.markerhub.controller.MyFirstModelController.batchExecutionCase(MyFirstModelController.java:170)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
-at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
-at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
-at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
-at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
-at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
-at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
-at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
-at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
-at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
-at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
-at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
-at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-at java.lang.Thread.run(Thread.java:748)
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.markerhub.ExceptionCustom.BusinessLogicException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDataProvider -->

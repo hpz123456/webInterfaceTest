@@ -97,26 +97,26 @@
         performer)
         values
         (
-        "${id}",
-        "${caseId}",
-        "${projectName}",
-        "${subordinateModule}",
-        "${caseName}",
-        "${url}",
-        "${header}",
-        "${data}",
-        "${params}",
-        "${requestMethod}",
-        "${cookie}",
-        "${caseDescription}",
-        "${dependData}",
-        "${listAssert}",
-        "${listVagueAssert}",
-        "${commonAssert}",
-        "${getCookie}",
-        "${remark}",
-        "${editor}",
-        "${performer}"
+        #{id},
+        #{caseId},
+        #{projectName},
+        #{subordinateModule},
+        #{caseName},
+        #{url},
+        #{header},
+        #{data},
+        #{params},
+        #{requestMethod},
+        #{cookie},
+        #{caseDescription},
+        #{dependData},
+        #{listAssert},
+        #{listVagueAssert},
+        #{commonAssert},
+        #{getCookie},
+        #{remark},
+        #{editor},
+        #{performer}
         )
     </insert>
 
@@ -131,25 +131,25 @@
     <update id="updateCase" parameterType="com.markerhub.entity.MyFirstModel">
         update my_first_model
         set
-        project_name="${projectName}",
-        subordinate_module="${subordinateModule}",
-        case_name="${caseName}",
-        data="${data}",
-        url="${url}",
-        header="${header}",
-        params="${params}",
-        request_method="${requestMethod}",
-        case_description="${caseDescription}",
-        depend_data="${dependData}",
-        list_assert="${listAssert}",
-        list_vague_assert="${listVagueAssert}",
-        common_assert="${commonAssert}",
-        get_cookie="${getCookie}",
-        assert_result="${assertResult}",
-        editor="${editor}",
-        performer="${performer}"
+        project_name=#{projectName},
+        subordinate_module=#{subordinateModule},
+        case_name=#{caseName},
+        data=#{data},
+        url=#{url},
+        header=#{header},
+        params=#{params},
+        request_method=#{requestMethod},
+        case_description=#{caseDescription},
+        depend_data=#{dependData},
+        list_assert=#{listAssert},
+        list_vague_assert=#{listVagueAssert},
+        common_assert=#{commonAssert},
+        get_cookie=#{getCookie},
+        assert_result=#{assertResult},
+        editor=#{editor},
+        performer=#{performer}
 
-        WHERE id="${id}"
+        WHERE id=#{id}
         </update>
 
 
@@ -180,27 +180,27 @@
         values
         <foreach collection="myFirstModel_list" item="list" index="index" separator=",">
             (
-            "${list.id}",
-            "${list.caseId}",
-            "${list.projectName}",
-            "${list.subordinateModule}",
-            "${list.caseName}",
-            "${list.url}",
-            "${list.header}",
-            "${list.data}",
-            "${list.params}",
-            "${list.requestMethod}",
-            "${list.cookie}",
-            "${list.caseDescription}",
-            "${list.dependData}",
-            "${list.listAssert}",
-            "${list.listVagueAssert}",
-            "${list.commonAssert}",
-            "${list.getCookie}",
-            "${list.remark}",
-            "${list.editor}",
-            "${list.performer}",
-            "${list.token}"
+            #{list.id},
+            #{list.caseId},
+            #{list.projectName},
+            #{list.subordinateModule},
+            #{list.caseName},
+            #{list.url},
+            #{list.header},
+            #{list.data},
+            #{list.params},
+            #{list.requestMethod},
+            #{list.cookie},
+            #{list.caseDescription},
+            #{list.dependData},
+            #{list.listAssert},
+            #{list.listVagueAssert},
+            #{list.commonAssert},
+            #{list.getCookie},
+            #{list.remark},
+            #{list.editor},
+            #{list.performer},
+            #{list.token}
             )
         </foreach>
     </insert>

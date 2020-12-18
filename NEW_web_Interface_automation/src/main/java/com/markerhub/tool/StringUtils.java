@@ -12,6 +12,7 @@ public class StringUtils {
             Matcher m = p.matcher(str);
             dest = m.replaceAll("");
         }
+//        dest = dest.replace("\"", "\'");
         return dest;
     }
 

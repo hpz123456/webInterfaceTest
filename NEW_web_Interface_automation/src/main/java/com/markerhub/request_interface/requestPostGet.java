@@ -83,6 +83,7 @@ public class requestPostGet {
 
     //进行post请求
     public static requestReturn requestPost(String url, Map<String, String> header, Map<String, String> params, String data, CookieStore cookieStore, String getCookie) throws Exception {
+//        data = data.replace("'", "\"");
         //创建一个httpclient对象
         DefaultHttpClient httpClient = null;
         if (requestPostGet.HttpOrHttps(url)) {

@@ -9,66 +9,10 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">managertest</th></tr>
-<tr><td><a href="#t0">管理端app接口项目测试</a></td><td class="num">1</td><td class="num">0</td><td class="num attn">1</td><td class="num">24</td><td></td><td></td></tr>
+<tr><td><a href="#t0">管理端app接口项目测试</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">788</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">managertest</th></tr></tbody><tbody id="t0"><tr><th colspan="4">管理端app接口项目测试 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.markerhub.caseTestNG.testservice</td><td><a href="#m0">testDataProvider</a></td><td rowspan="1">1607672177611</td><td rowspan="1">0</td></tr><tr><th colspan="4">管理端app接口项目测试 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.markerhub.caseTestNG.testservice</td><td><a href="#m1">testDataProvider</a></td><td rowspan="1">1607672177588</td><td rowspan="1">22</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">managertest</th></tr></tbody><tbody id="t0"><tr><th colspan="4">管理端app接口项目测试 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.markerhub.caseTestNG.testservice</td><td><a href="#m0">testDataProvider</a></td><td rowspan="1">1607929645896</td><td rowspan="1">738</td></tr></tbody>
 </table>
-<h2>管理端app接口项目测试</h2><h3 id="m0">com.markerhub.caseTestNG.testservice#testDataProvider</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>MyFirstModel{id=&apos;4997132980&apos;, caseId=&apos;test-2&apos;, projectName=&apos;测试1&apos;, subordinateModule=&apos;测试1&apos;, caseName=&apos;测试1&apos;, url=&apos;http://127.0.0.1:8081/my-first-model/findCase&apos;, header=&apos;{Content-Type:application/json}&apos;, data=&apos;{}&apos;, params=&apos;&apos;, requestMethod=&apos;POST&apos;, cookie=&apos;&apos;, caseDescription=&apos;&apos;, token=&apos;&apos;, dependData=&apos;&apos;, listAssert=&apos;&apos;, listVagueAssert=&apos;&apos;, commonAssert=&apos;&apos;, getCookie=&apos;&apos;, remark=&apos;&apos;, assertResult=&apos;N&apos;, editor=&apos;侯鹏哲&apos;, performer=&apos;侯鹏哲&apos;}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">com.markerhub.ExceptionCustom.BusinessLogicException: header格式错误
-	at com.markerhub.caseTestNG.parameterDispose.startRequest(parameterDispose.java:33)
-	at com.markerhub.caseTestNG.testservice.testDataProvider(testservice.java:26)
-	at com.markerhub.caseTestNG.Entry.callTestNG(Entry.java:32)
-	at com.markerhub.service.impl.MyFirstModelServiceImpl.batchExecutionCase(MyFirstModelServiceImpl.java:227)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:205)
-	at com.sun.proxy.$Proxy73.batchExecutionCase(Unknown Source)
-	at com.markerhub.controller.MyFirstModelController.batchExecutionCase(MyFirstModelController.java:170)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.markerhub.caseTestNG.testservice#testDataProvider</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>MyFirstModel{id=&apos;1828443672&apos;, caseId=&apos;test-1&apos;, projectName=&apos;测试&apos;, subordinateModule=&apos;测试&apos;, caseName=&apos;{}&apos;, url=&apos;http://127.0.0.1:8081/my-first-model/findCase&apos;, header=&apos;&apos;, data=&apos;{}&apos;, params=&apos;&apos;, requestMethod=&apos;POST&apos;, cookie=&apos;&apos;, caseDescription=&apos;&apos;, token=&apos;&apos;, dependData=&apos;&apos;, listAssert=&apos;&apos;, listVagueAssert=&apos;&apos;, commonAssert=&apos;&apos;, getCookie=&apos;&apos;, remark=&apos;&apos;, assertResult=&apos;Y&apos;, editor=&apos;侯鹏哲&apos;, performer=&apos;侯鹏哲&apos;}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>管理端app接口项目测试</h2><h3 id="m0">com.markerhub.caseTestNG.testservice#testDataProvider</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>MyFirstModel{id=&apos;1828443672&apos;, caseId=&apos;test-1&apos;, projectName=&apos;测试&apos;, subordinateModule=&apos;测试&apos;, caseName=&apos;{}&apos;, url=&apos;http://127.0.0.1:8081/my-first-model/findCase&apos;, header=&apos;&apos;, data=&apos;{&quot;id&quot;:&quot;&quot;,&quot;caseId&quot;:&quot;17&quot;,&quot;projectName&quot;:&quot;&quot;,&quot;subordinateModule&quot;:&quot;&quot;,&quot;caseName&quot;:&quot;&quot;,&quot;url&quot;:&quot;&quot;,&quot;header&quot;:&quot;&quot;,&quot;data&quot;:&quot;&quot;,&quot;params&quot;:&quot;&quot;,&quot;requestMethod&quot;:&quot;&quot;,&quot;cookie&quot;:&quot;&quot;,&quot;caseDescription&quot;:&quot;&quot;,&quot;token&quot;:&quot;&quot;,&quot;dependData&quot;:&quot;&quot;,&quot;listAssert&quot;:&quot;&quot;,&quot;listVagueAssert&quot;:&quot;&quot;,&quot;commonAssert&quot;:&quot;&quot;,&quot;getCookie&quot;:&quot;&quot;,&quot;remark&quot;:&quot;&quot;,&quot;assertResult&quot;:&quot;&quot;,&quot;editor&quot;:&quot;&quot;,&quot;performer&quot;:&quot;&quot;,&quot;cookieStore&quot;:null,&quot;parameterToken&quot;:null,&quot;requestResult&quot;:null}&apos;, params=&apos;&apos;, requestMethod=&apos;POST&apos;, cookie=&apos;&apos;, caseDescription=&apos;&apos;, token=&apos;&apos;, dependData=&apos;&apos;, listAssert=&apos;&apos;, listVagueAssert=&apos;&apos;, commonAssert=&apos;&apos;, getCookie=&apos;&apos;, remark=&apos;&apos;, assertResult=&apos;Y&apos;, editor=&apos;侯鹏哲&apos;, performer=&apos;侯鹏哲&apos;}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
