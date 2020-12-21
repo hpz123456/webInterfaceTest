@@ -16,9 +16,9 @@ public class caseAssert {
             return;
         }
         //将普通断言的值转换为map
-        Map<String, String> stringMap = null;
+        Map<String, Object> stringMap = null;
         try {
-            stringMap = StringJsonMap.StMap(myFirstModel.getCommonAssert());
+            stringMap = StringJsonMap.StringMap(myFirstModel.getCommonAssert());
         } catch (Exception e) {
             throw new CaseAssertException(myFirstModel, "普通断言格式错误");
         }
@@ -27,12 +27,15 @@ public class caseAssert {
             Object valueSt = null;
             try {
                 //取出key对应的结果中的值
-                valueSt = StringJsonMap.analysisJsonObject(myFirstModel.getRequestMethod(), key);
+                valueSt = StringJsonMap.analysisJsonObject(myFirstModel.getRequestResult(), key);
+//                System.out.println(valueSt.toString());
             } catch (Exception e) {
                 throw new CaseAssertException(myFirstModel, "普通断言key格式错误，或结果中没有对应的值");
             }
             //结果中的值和value进行断言
-            if (!((valueSt.toString()).equals(stringMap.get(key)))) {
+//            String s = "" + stringMap.get(key);
+//            System.out.println(s);
+            if (!((valueSt.toString()).equals(stringMap.get(key).toString()))) {
                 throw new CaseAssertException(myFirstModel, valueSt + "!=" + stringMap.get(key) + "不相等,普通断言失败");
             }
         }

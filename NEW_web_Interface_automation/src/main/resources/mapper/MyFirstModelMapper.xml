@@ -179,29 +179,31 @@
         token)
         values
         <foreach collection="myFirstModel_list" item="list" index="index" separator=",">
-            (
-            #{list.id},
-            #{list.caseId},
-            #{list.projectName},
-            #{list.subordinateModule},
-            #{list.caseName},
-            #{list.url},
-            #{list.header},
-            #{list.data},
-            #{list.params},
-            #{list.requestMethod},
-            #{list.cookie},
-            #{list.caseDescription},
-            #{list.dependData},
-            #{list.listAssert},
-            #{list.listVagueAssert},
-            #{list.commonAssert},
-            #{list.getCookie},
-            #{list.remark},
-            #{list.editor},
-            #{list.performer},
-            #{list.token}
-            )
+            <if test="list.caseId != null and list.caseId != ''">
+                (
+                #{list.id},
+                #{list.caseId},
+                #{list.projectName},
+                #{list.subordinateModule},
+                #{list.caseName},
+                #{list.url},
+                #{list.header},
+                #{list.data},
+                #{list.params},
+                #{list.requestMethod},
+                #{list.cookie},
+                #{list.caseDescription},
+                #{list.dependData},
+                #{list.listAssert},
+                #{list.listVagueAssert},
+                #{list.commonAssert},
+                #{list.getCookie},
+                #{list.remark},
+                #{list.editor},
+                #{list.performer},
+                #{list.token}
+                )
+            </if>
         </foreach>
     </insert>
 

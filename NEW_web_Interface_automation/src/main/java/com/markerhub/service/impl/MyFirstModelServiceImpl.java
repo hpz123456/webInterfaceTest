@@ -158,29 +158,31 @@ public class MyFirstModelServiceImpl extends ServiceImpl<MyFirstModelMapper, MyF
         List<MyFirstModel> myFirstModels_list = new ArrayList<MyFirstModel>();
 
         for (Map<String, String> model : list) {
-            MyFirstModel myFirstModel = new MyFirstModel();
-            myFirstModel.setCaseId(model.get("用例id"));
-            myFirstModel.setProjectName(model.get("项目名称"));
-            myFirstModel.setSubordinateModule(model.get("所属模块"));
-            myFirstModel.setCaseName(model.get("用例名称"));
-            myFirstModel.setUrl(model.get("URL"));
-            myFirstModel.setHeader(model.get("header请求头"));
-            myFirstModel.setData(model.get("data请求体"));
-            myFirstModel.setParams(model.get("params请求体"));
-            myFirstModel.setRequestMethod(model.get("请求方式"));
-            myFirstModel.setCookie(model.get("cookies"));
-            myFirstModel.setCaseDescription(model.get("用例描述"));
-            myFirstModel.setToken(model.get("token"));
-            myFirstModel.setDependData(model.get("数据依赖"));
-            myFirstModel.setListAssert(model.get("列表断言"));
-            myFirstModel.setListVagueAssert(model.get("列表模糊断言"));
-            myFirstModel.setCommonAssert(model.get("普通断言"));
-            myFirstModel.setGetCookie(model.get("获取cookies"));
-            myFirstModel.setRemark(model.get("备注"));
-            myFirstModel.setEditor(model.get("编写人"));
-            myFirstModel.setPerformer(model.get("执行人"));
-            myFirstModel.setId(MathUtils.getPrimaryKey());
-            myFirstModels_list.add(myFirstModel);
+            if (model.get("用例id") != null && model.get("用例id") != "") {
+                MyFirstModel myFirstModel = new MyFirstModel();
+                myFirstModel.setCaseId(model.get("用例id"));
+                myFirstModel.setProjectName(model.get("项目名称"));
+                myFirstModel.setSubordinateModule(model.get("所属模块"));
+                myFirstModel.setCaseName(model.get("用例名称"));
+                myFirstModel.setUrl(model.get("URL"));
+                myFirstModel.setHeader(model.get("header请求头"));
+                myFirstModel.setData(model.get("data请求体"));
+                myFirstModel.setParams(model.get("params请求体"));
+                myFirstModel.setRequestMethod(model.get("请求方式"));
+                myFirstModel.setCookie(model.get("cookies"));
+                myFirstModel.setCaseDescription(model.get("用例描述"));
+                myFirstModel.setToken(model.get("token"));
+                myFirstModel.setDependData(model.get("数据依赖"));
+                myFirstModel.setListAssert(model.get("列表断言"));
+                myFirstModel.setListVagueAssert(model.get("列表模糊断言"));
+                myFirstModel.setCommonAssert(model.get("普通断言"));
+                myFirstModel.setGetCookie(model.get("获取cookies"));
+                myFirstModel.setRemark(model.get("备注"));
+                myFirstModel.setEditor(model.get("编写人"));
+                myFirstModel.setPerformer(model.get("执行人"));
+                myFirstModel.setId(MathUtils.getPrimaryKey());
+                myFirstModels_list.add(myFirstModel);
+            }
         }
         return myFirstModels_list;
     }

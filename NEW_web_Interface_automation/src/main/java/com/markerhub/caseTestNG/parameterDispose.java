@@ -1,5 +1,6 @@
 package com.markerhub.caseTestNG;
 
+import cn.hutool.json.JSONObject;
 import com.markerhub.ExceptionCustom.BusinessLogicException;
 import com.markerhub.entity.MyFirstModel;
 import com.markerhub.entity.requestReturn;
@@ -90,7 +91,9 @@ public class parameterDispose {
                     //将data转换成map
                     Map<String, String> dataMap = StringJsonMap.StMap(my.getData());
                     dataMap.putAll(ylmap);
-                    data = StringUtils.replaceBlank(dataMap.toString().replace("=", ":"));
+                    JSONObject jsonObject = new JSONObject(dataMap);
+                    data = jsonObject.toString();
+//                    data = StringUtils.replaceBlank(dataMap.toString().replace("=", ":"));
                 }
             } catch (Exception e) {
                 throw new BusinessLogicException(my, "data数据格式错误");

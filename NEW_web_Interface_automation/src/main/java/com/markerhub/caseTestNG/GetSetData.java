@@ -7,6 +7,7 @@ import com.markerhub.entity.requestReturn;
 import com.markerhub.tool.StringJsonMap;
 import org.apache.http.client.CookieStore;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -79,8 +80,9 @@ public class GetSetData {
             Map<String, Object> map = StringJsonMap.StringMap(datap);
             //将map数据的value解析为单个数据String类型
             for (String m : map.keySet()) {
-                ym.put(m, (List) map.get(m));
-                count = count + ((List) map.get(m)).size();
+                String[] split = map.get(m).toString().split(",");
+                ym.put(m, Arrays.asList(split));
+                count = count + Arrays.asList(split).size();
             }
 
 
@@ -92,7 +94,7 @@ public class GetSetData {
                         for (Object o : ym.get(s)) {
                             String[] split = (o.toString()).split("-");
                             //解析出value
-                            String value = StringJsonMap.analysisJson(myFirstModelList.getDependData(), split[1]);
+                            String value = StringJsonMap.analysisJson(myFirstModelList.getRequestResult(), split[1]);
                             ylmap.put(split[0], value);
                         }
 

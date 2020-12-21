@@ -49,6 +49,7 @@ public class StringJsonMap {
         return map;
     }
 
+
     public static void main(String[] args) {
         String jsonString = "{\"0\":[{\"name\":\"品牌\",\"value\":\"1,2,3,4\"}],\"1\":[{\"name\":\"材质\",\"value\":\"\"},{\"name\":\"风格\",\"value\":\"\"}],\"2\":[{\"name\":\"类型\",\"value\":\"运动,休闲,登山\"}],\"3\":[{\"name\":\"适用季节\",\"value\":\"春,夏,秋,冬\"}],\"4\":[{\"name\":\"生产日期\",\"value\":\"\"},{\"name\":\"结束日期\",\"value\":\"\"}]}";
 //        String st = "{\"store\":{\"book\":[{\"category\":\"reference\",\"author\":\"Nigel Rees\",\"title\":\"Sayings of the Century\",\"price\":8.95},{\"category\":\"fiction\",\"author\":\"Evelyn Waugh\",\"title\":\"Sword of Honour\",\"price\":12.99},{\"category\":\"fiction\",\"author\":\"Herman Melville\",\"title\":\"Moby Dick\",\"isbn\":\"0-553-21311-3\",\"price\":8.99},{\"category\":\"fiction\",\"author\":\"J. R. R. Tolkien\",\"title\":\"The Lord of the Rings\",\"isbn\":\"0-395-19395-8\",\"price\":22.99}],\"bicycle\":{\"color\":\"red\",\"price\":19.95}},\"expensive\":10}";
