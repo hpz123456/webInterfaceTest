@@ -4,6 +4,7 @@ package com.markerhub.controller;
 import com.markerhub.common.lang.Result;
 import com.markerhub.entity.MyFirstModel;
 import com.markerhub.service.MyFirstModelService;
+import com.markerhub.service.impl.MyFirstModelServiceImpl;
 import com.markerhub.tool.MathUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.DefaultResourceLoader;
@@ -68,7 +69,6 @@ public class MyFirstModelController {
         myFirstModelService.batchSaveModification(file);
         return Result.succ(200, "操作成功", null);
     }
-
     //批量删除用例
     @PostMapping("/deleteList")
     public Result deleteList(@RequestBody List<String> caseid_list) {
@@ -82,10 +82,11 @@ public class MyFirstModelController {
     public Result findCase(@RequestBody MyFirstModel myFirstModel) {
         System.out.println(myFirstModel.toString());
         List<MyFirstModel> myFirstModels_list = myFirstModelService.findCase(myFirstModel);
-        for (MyFirstModel m : myFirstModels_list) {
-            System.out.println(m.toString());
-        }
-        return Result.succ(200, "操作成功", myFirstModels_list);
+//        for (MyFirstModel m : myFirstModels_list) {
+//            System.out.println(m.toString());
+//        }
+        List<MyFirstModel> myFirstModelslist = MyFirstModelServiceImpl.listStort(myFirstModels_list);
+        return Result.succ(200, "操作成功", myFirstModelslist);
     }
 
     //修改用例

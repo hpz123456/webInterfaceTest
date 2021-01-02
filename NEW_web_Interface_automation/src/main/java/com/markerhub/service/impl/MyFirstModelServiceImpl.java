@@ -109,6 +109,7 @@ public class MyFirstModelServiceImpl extends ServiceImpl<MyFirstModelMapper, MyF
             myFirstModel.setSubordinateModule(StringUtils.replaceBlank(myFirstModel.getSubordinateModule()));
             myFirstModel.setCaseName(StringUtils.replaceBlank(myFirstModel.getCaseName()));
             myFirstModel.setHeader(StringUtils.replaceBlank(myFirstModel.getHeader()));
+            myFirstModel.setFormData(StringUtils.replaceBlank(myFirstModel.getFormData()));
             myFirstModel.setData(StringUtils.replaceBlank(myFirstModel.getData()));
             myFirstModel.setParams(StringUtils.replaceBlank(myFirstModel.getParams()));
             myFirstModel.setRequestMethod(StringUtils.replaceBlank(myFirstModel.getRequestMethod()));
@@ -166,6 +167,7 @@ public class MyFirstModelServiceImpl extends ServiceImpl<MyFirstModelMapper, MyF
                 myFirstModel.setCaseName(model.get("用例名称"));
                 myFirstModel.setUrl(model.get("URL"));
                 myFirstModel.setHeader(model.get("header请求头"));
+                myFirstModel.setFormData(model.get("formData"));
                 myFirstModel.setData(model.get("data请求体"));
                 myFirstModel.setParams(model.get("params请求体"));
                 myFirstModel.setRequestMethod(model.get("请求方式"));
@@ -235,5 +237,56 @@ public class MyFirstModelServiceImpl extends ServiceImpl<MyFirstModelMapper, MyF
 
         return returnMyFirstModelList;
     }
+
+    public static List<MyFirstModel> listStort(List<MyFirstModel> myFirstModels_list) {
+        //接受通用用例的list
+        List<MyFirstModel> myFirstModelsTY = new ArrayList<MyFirstModel>();
+        //接受非通用用例的id
+        List<String> caseNameid = new ArrayList<String>();
+        //接收普通用例的list
+        List<List<MyFirstModel>> PTCaseList = new ArrayList<List<MyFirstModel>>();
+        //最后需要返回的list
+        List<MyFirstModel> returnList = new ArrayList<MyFirstModel>();
+        //吧名字分类
+        for (MyFirstModel my : myFirstModels_list) {
+            String[] st = my.getCaseId().split("-");
+            //将TY用例筛选出来
+            if (st[0].equals("TY")) {
+                myFirstModelsTY.add(my);
+            } else {
+                //将普通用例筛选出来
+                caseNameid.add(st[0]);
+            }
+        }
+        //去重
+        List<String> caseNameIdDe = caseModel.deWeigjt(caseNameid);
+        //将用例名相同的放在一起
+        for (String st : caseNameIdDe) {
+            List<MyFirstModel> myf = new ArrayList<MyFirstModel>();
+            for (MyFirstModel my : myFirstModels_list) {
+                if (st.equals(my.getCaseId().split("-")[0])) {
+                    myf.add(my);
+                }
+            }
+            PTCaseList.add(myf);
+        }
+        //清空testCase
+//        testCase.clear();
+        //将TY排序，并挨个放入testCase
+        List<MyFirstModel> TY = caseModel.sourtListMyFirstModelTY(myFirstModelsTY);
+        for (MyFirstModel my : TY) {
+            returnList.add(my);
+        }
+        //将PT排序，并挨个放入testCase
+        for (List<MyFirstModel> m : PTCaseList) {
+            List<MyFirstModel> PT = caseModel.sourtListMyFirstModelPT(m);
+            for (MyFirstModel my : PT) {
+                returnList.add(my);
+            }
+        }
+        return returnList;
+    }
+
+
 
 }

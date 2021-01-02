@@ -98,12 +98,22 @@ public class caseModel {
 //        String st = "02";
 //
 //        System.out.println(Integer.valueOf(st));
-        List<List<MyFirstModel>> PTCaseList = new ArrayList<List<MyFirstModel>>();
-        for (int i = 0; i < 3; i++) {
-            List<MyFirstModel> myf = new ArrayList<MyFirstModel>();
-            PTCaseList.add(myf);
+//        List<List<MyFirstModel>> PTCaseList = new ArrayList<List<MyFirstModel>>();
+//        for (int i = 0; i < 3; i++) {
+//            List<MyFirstModel> myf = new ArrayList<MyFirstModel>();
+//            PTCaseList.add(myf);
+//        }
+//        System.out.println(PTCaseList.size());
+
+        try{
+           String st = null;
+           st.equals("");
+        }catch (Exception e){
+            System.out.println(e.toString());
+            throw e;
         }
-        System.out.println(PTCaseList.size());
+
+
 
     }
 

@@ -3,6 +3,7 @@ package com.markerhub.caseTestNG;
 import cn.hutool.json.JSONObject;
 import com.markerhub.ExceptionCustom.BusinessLogicException;
 import com.markerhub.entity.MyFirstModel;
+import com.markerhub.entity.caseModel;
 import com.markerhub.entity.requestReturn;
 import com.markerhub.request_interface.requestPostGet;
 import com.markerhub.tool.StringJsonMap;
@@ -24,6 +25,19 @@ public class parameterDispose {
         String data = "";//data
         CookieStore cookieStore = null;//cookies
         String getCookie = my.getGetCookie();//是否获取cookie
+        Map<String, Object> formData = null;//formData请求体
+
+        //判断formData是否为空
+        if (!my.getFormData().isEmpty()) {
+            //不为空，将实例中的formData转换为map赋值给入参formData
+            try {
+                formData = StringJsonMap.st_Map(my.getFormData());
+            } catch (Exception e) {
+                throw new BusinessLogicException(my, "formData格式错误");
+            }
+        }
+
+
 
         //判断请求头是否为空
         if (!my.getHeader().isEmpty()) {
@@ -130,11 +144,29 @@ public class parameterDispose {
 //                    null);
 //        }
         //定义返回值
+
         requestReturn requestReturn = null;
         if (my.getRequestMethod().equals("POST")) {
-            requestReturn = requestPostGet.requestPost(my.getUrl(), header, params, data, cookieStore, getCookie);
+            try {
+                requestReturn = requestPostGet.requestPost(my.getUrl(), header, params, data, cookieStore, getCookie,formData);
+            }catch (Exception e){
+                //如果请求中出现异常，将直接把抛出来的异常写入结果，并将异常抛出
+                my.setAssertResult("N");
+                my.setRequestResult(e.toString());
+                caseModel.returnTestCase.add(my);
+                throw e;
+            }
+
         } else if (my.getRequestMethod().equals("GET")) {
-            requestReturn = requestPostGet.requestGet(url, header, params, getCookie, cookieStore);
+            try {
+                requestReturn = requestPostGet.requestGet(url, header, params, getCookie, cookieStore);
+            }catch (Exception e){
+                //如果请求中出现异常，将直接把抛出来的异常写入结果，并将异常抛出
+                my.setAssertResult("N");
+                my.setRequestResult(e.toString());
+                caseModel.returnTestCase.add(my);
+                throw e;
+            }
         }
         GetSetData.getData(requestReturn, my);
         //判断需不需要获取cookie

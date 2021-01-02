@@ -41,7 +41,11 @@ public class requestPostGet {
         //添加params
         if (params != null) {
             for (String key : params.keySet()) {
-                uriBuilder.addParameter(key, params.get(key).toString());
+                String paramsSt = params.get(key).toString();
+                if (((paramsSt.substring(paramsSt.length()-1)).equals("\"")) && ((paramsSt.substring(0,1)).equals("\""))){
+                    paramsSt = paramsSt.substring(1,paramsSt.length()-1);
+                }
+                uriBuilder.addParameter(key, paramsSt);
             }
         }
         if (cookieStore != null) {
@@ -82,7 +86,7 @@ public class requestPostGet {
     }
 
     //进行post请求
-    public static requestReturn requestPost(String url, Map<String, String> header, Map<String, Object> params, String data, CookieStore cookieStore, String getCookie) throws Exception {
+    public static requestReturn requestPost(String url, Map<String, String> header, Map<String, Object> params, String data, CookieStore cookieStore, String getCookie,Map<String,Object> formData) throws Exception {
 //        data = data.replace("'", "\"");
         //创建一个httpclient对象
         DefaultHttpClient httpClient = null;
@@ -92,7 +96,7 @@ public class requestPostGet {
             httpClient = new SSLClient();
         }
 
-        StringEntity entity;
+        StringEntity entity = null;
         //创建一个post对象
         HttpPost post = new HttpPost(url);
         //添加header
@@ -117,12 +121,48 @@ public class requestPostGet {
             post.setEntity(entity);
         }
 
+        if (formData != null) {
+//            post.removeHeaders("Content-Length");
+//            post.addHeader("Cache-Control", "no-cache");
+//            post.addHeader("Postman-Token", "<calculated when request is sent>");
+//            post.addHeader("Content-Type", "multipart/form-data; boundary=<calculated when request is sent>");
+//            post.addHeader("Content-Length", "<calculated when request is sent>");
+//            post.addHeader("Host", "<calculated when request is sent>");
+//            post.addHeader("User-Agent", "PostmanRuntime/7.26.8");
+//            post.addHeader("Accept", "*/*");
+//            post.addHeader("Accept-Encoding", "gzip, deflate, br");
+//            post.addHeader("Connection", "keep-alive");
+            List<NameValuePair> formDataList = new ArrayList<NameValuePair>();
+            for (String formDataSt:formData.keySet()) {
+                String formSt = formData.get(formDataSt).toString();
+                if (((formSt.substring(formSt.length()-1)).equals("\"")) && ((formSt.substring(0,1)).equals("\""))){
+                    formSt = formSt.substring(1,formSt.length()-1);
+                }
+
+                formDataList.add(new BasicNameValuePair(formDataSt,formSt));
+            }
+            entity = new UrlEncodedFormEntity(formDataList,"UTF-8");
+            post.setEntity(entity);
+
+        }
         if (cookieStore != null) {
             httpClient.setCookieStore(cookieStore);
         }
+//        Header[] allHeaders = post.getAllHeaders();
+//        for (Header h:allHeaders) {
+//            String name = h.getName();
+//            String value = h.getValue();
+//
+//        }
 
         //执行post请求
         CloseableHttpResponse response = httpClient.execute(post);
+//        Header[] allHeaders = post.getAllHeaders();
+//        for (Header h:allHeaders) {
+//            String name = h.getName();
+//            String value = h.getValue();
+//
+//        }
         //body
         HttpEntity body = response.getEntity();
 //        statuscode

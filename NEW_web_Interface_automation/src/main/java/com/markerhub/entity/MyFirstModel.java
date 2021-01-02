@@ -37,6 +37,8 @@ public class MyFirstModel implements Serializable {
 
     private String header;
 
+    private String formData;
+
     private String data;
 
     private String params;
@@ -72,6 +74,14 @@ public class MyFirstModel implements Serializable {
     private Map<String, String> parameterToken;
 
     private String requestResult;
+
+    public String getFormData() {
+        return formData;
+    }
+
+    public void setFormData(String formData) {
+        this.formData = formData;
+    }
 
     public String getRequestResult() {
         return requestResult;

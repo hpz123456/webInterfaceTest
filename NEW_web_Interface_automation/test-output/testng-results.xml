@@ -1,39 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="managertest" duration-ms="66" started-at="2020-12-21T08:25:53Z" finished-at="2020-12-21T08:25:53Z">
+  <suite name="managertest" duration-ms="566" started-at="2021-01-02T10:01:06Z" finished-at="2021-01-02T10:01:07Z">
     <groups>
     </groups>
-    <test name="管理端app接口项目测试" duration-ms="66" started-at="2020-12-21T08:25:53Z" finished-at="2020-12-21T08:25:53Z">
+    <test name="管理端app接口项目测试" duration-ms="566" started-at="2021-01-02T10:01:06Z" finished-at="2021-01-02T10:01:07Z">
       <class name="com.markerhub.caseTestNG.testservice">
-        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@46b4acd8]" name="testDataProvider" duration-ms="26" started-at="2020-12-21T08:25:53Z" data-provider="data" finished-at="2020-12-21T08:25:53Z">
+        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@6d7caa21]" name="testDataProvider" duration-ms="540" started-at="2021-01-02T10:01:06Z" data-provider="data" finished-at="2021-01-02T10:01:07Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[MyFirstModel{id='7088037970', caseId='pt-1', projectName='案例', subordinateModule='案例', caseName='post无数据', url='http://127.0.0.1:8081/my-first-model/findCase', header='', data='{}', params='', requestMethod='POST', cookie='', caseDescription='post请求，且没有请求数据', token='', dependData='', listAssert='', listVagueAssert='', commonAssert='{"$.code":"200","$.msg":"操作成功"}', getCookie='', remark='', assertResult='Y', editor='hpz', performer='hpz'}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDataProvider -->
-        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@46b4acd8]" name="testDataProvider" duration-ms="21" started-at="2020-12-21T08:25:53Z" data-provider="data" finished-at="2020-12-21T08:25:53Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[MyFirstModel{id='7086318430', caseId='pt-2', projectName='案例', subordinateModule='案例', caseName='psot有data', url='http://127.0.0.1:8081/my-first-model/findCase', header='', data='{"caseId":"","caseName":"","projectName":"案例","subordinateModule":"","editor":"","performer":""}', params='', requestMethod='POST', cookie='', caseDescription='post请求，且有请求数据data', token='', dependData='', listAssert='{"$..projectName":"案例"}', listVagueAssert='', commonAssert='', getCookie='', remark='', assertResult='Y', editor='hpz', performer='hpz'}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDataProvider -->
-        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@46b4acd8]" name="testDataProvider" duration-ms="17" started-at="2020-12-21T08:25:53Z" data-provider="data" finished-at="2020-12-21T08:25:53Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[MyFirstModel{id='7081320602', caseId='pt-3', projectName='案例', subordinateModule='案例', caseName='psot数据依赖', url='http://127.0.0.1:8081/my-first-model/findCase', header='', data='{"projectName":"","subordinateModule":"","editor":"","performer":""}', params='', requestMethod='POST', cookie='', caseDescription='post数据依赖', token='', dependData='{"pt-1":"caseId-$.data[1].caseId,caseName-$.data[1].caseName"}', listAssert='', listVagueAssert='', commonAssert='', getCookie='', remark='', assertResult='Y', editor='hpz', performer='hpz'}]]>
+                <![CDATA[MyFirstModel{id='4546432836', caseId='pt-7', projectName='案例', subordinateModule='案例', caseName='post无数据', url='https://api.xdclass.net/pub/api/v1/web/web_login', header='', data='', params='', requestMethod='POST', cookie='', caseDescription='post用formData请求', token='', dependData='', listAssert='', listVagueAssert='', commonAssert='', getCookie='', remark='', assertResult='Y', editor='hpz', performer='hpz'}]]>
               </value>
             </param>
           </params>
