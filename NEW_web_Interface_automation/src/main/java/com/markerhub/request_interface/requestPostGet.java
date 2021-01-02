@@ -26,7 +26,7 @@ import java.util.Map;
 
 public class requestPostGet {
     //进行get请求
-    public static requestReturn requestGet(String url, Map<String, String> header, Map<String, String> params, String getCookie, CookieStore cookieStore) throws Exception {
+    public static requestReturn requestGet(String url, Map<String, String> header, Map<String, Object> params, String getCookie, CookieStore cookieStore) throws Exception {
         //创建一个httpclient对象
         DefaultHttpClient httpClient = null;
         if (requestPostGet.HttpOrHttps(url)) {
@@ -41,7 +41,7 @@ public class requestPostGet {
         //添加params
         if (params != null) {
             for (String key : params.keySet()) {
-                uriBuilder.addParameter(key, params.get(key));
+                uriBuilder.addParameter(key, params.get(key).toString());
             }
         }
         if (cookieStore != null) {
@@ -82,7 +82,7 @@ public class requestPostGet {
     }
 
     //进行post请求
-    public static requestReturn requestPost(String url, Map<String, String> header, Map<String, String> params, String data, CookieStore cookieStore, String getCookie) throws Exception {
+    public static requestReturn requestPost(String url, Map<String, String> header, Map<String, Object> params, String data, CookieStore cookieStore, String getCookie) throws Exception {
 //        data = data.replace("'", "\"");
         //创建一个httpclient对象
         DefaultHttpClient httpClient = null;
@@ -106,7 +106,7 @@ public class requestPostGet {
         List<NameValuePair> kvList = new ArrayList<>();
         if (params != null) {
             for (String key : params.keySet()) {
-                kvList.add(new BasicNameValuePair(key, params.get(key)));
+                kvList.add(new BasicNameValuePair(key, params.get(key).toString()));
             }
             //包装成一个Entity对象
             entity = new UrlEncodedFormEntity(kvList, "utf-8");

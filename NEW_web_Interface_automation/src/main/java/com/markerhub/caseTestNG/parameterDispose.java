@@ -20,7 +20,7 @@ public class parameterDispose {
         //入参
         String url = my.getUrl();//url
         Map<String, String> header = null;//请求头
-        Map<String, String> params = null; //params
+        Map<String, Object> params = null; //params
         String data = "";//data
         CookieStore cookieStore = null;//cookies
         String getCookie = my.getGetCookie();//是否获取cookie
@@ -62,18 +62,24 @@ public class parameterDispose {
         //处理params
         if (!my.getParams().isEmpty()) {
             try {
-                params = StringJsonMap.StMap(my.getParams());
+                params = StringJsonMap.st_Map(my.getParams());
             } catch (Exception e) {
                 throw new BusinessLogicException(my, "params格式错误");
             }
 
         }
+
         //将依赖数据放入请求体param
         if (ylmap != null && my.getRequestMethod().equals("GET")) {
             if (params != null) {
-                params.putAll(ylmap);
+                for (String s:ylmap.keySet()) {
+                    params.put(s,ylmap.get(s));
+                }
             } else {
-                params = ylmap;
+                params = new HashMap<String, Object>();
+                for (String s:ylmap.keySet()) {
+                    params.put(s,ylmap.get(s));
+                }
             }
         }
 
