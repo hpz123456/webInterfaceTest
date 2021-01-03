@@ -8,6 +8,7 @@ import com.aventstack.extentreports.model.TestAttribute;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.markerhub.entity.MyFirstModel;
+import com.markerhub.entity.caseModel;
 import org.testng.*;
 import org.testng.xml.XmlSuite;
 
@@ -111,6 +112,7 @@ public class ExtentTestNGIReporterListener implements IReporter {
         str = str.replace(":", "_");
 //        String newNumber = str.replace(" ", "+");
         ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(OUTPUT_FOLDER + str + FILE_NAME);
+        caseModel.fileName = str + FILE_NAME;
         htmlReporter.config().setDocumentTitle("api接口自动化测试报告");
         htmlReporter.config().setReportName("api接口自动化测试报告");
 

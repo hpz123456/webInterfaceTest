@@ -28,7 +28,7 @@ public class parameterDispose {
         Map<String, Object> formData = null;//formData请求体
 
         //判断formData是否为空
-        if (!my.getFormData().isEmpty()) {
+        if (my.getFormData() != null && !my.getFormData().isEmpty()) {
             //不为空，将实例中的formData转换为map赋值给入参formData
             try {
                 formData = StringJsonMap.st_Map(my.getFormData());

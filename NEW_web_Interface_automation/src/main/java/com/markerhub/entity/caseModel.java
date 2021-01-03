@@ -9,6 +9,7 @@ public class caseModel {
 
     public static List<MyFirstModel> testCase;
     public static List<MyFirstModel> returnTestCase;
+    public static String fileName = "";
 
     public static void listStort() {
         //接受通用用例的list
