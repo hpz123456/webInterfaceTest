@@ -1,18 +1,12 @@
 package com.markerhub.timing;
 
-import com.markerhub.tool.fileOperation;
+
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.nio.file.attribute.FileTime;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -22,7 +16,7 @@ public class DeleteFile {
 	//在一个特定的时间执行这个方法
 	//cron表达式
 	//秒  分  时  日  月  周几
-	@Scheduled(cron = "*/*  *  2  *  *  ?")
+	@Scheduled(cron = "0 0 * * * ?")
 	public void deleFile() throws IOException {
 
 		System.out.println("1");
