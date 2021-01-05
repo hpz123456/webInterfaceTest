@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="managertest" duration-ms="1353" started-at="2021-01-03T10:10:18Z" finished-at="2021-01-03T10:10:19Z">
+  <suite name="managertest" duration-ms="2695" started-at="2021-01-05T03:23:11Z" finished-at="2021-01-05T03:23:14Z">
     <groups>
     </groups>
-    <test name="管理端app接口项目测试" duration-ms="1353" started-at="2021-01-03T10:10:18Z" finished-at="2021-01-03T10:10:19Z">
+    <test name="管理端app接口项目测试" duration-ms="2695" started-at="2021-01-05T03:23:11Z" finished-at="2021-01-05T03:23:14Z">
       <class name="com.markerhub.caseTestNG.testservice">
-        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@43689561]" name="testDataProvider" duration-ms="316" started-at="2021-01-03T10:10:18Z" data-provider="data" finished-at="2021-01-03T10:10:18Z">
+        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@321e8058]" name="testDataProvider" duration-ms="19" started-at="2021-01-05T03:23:11Z" data-provider="data" finished-at="2021-01-05T03:23:11Z">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDataProvider -->
-        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@43689561]" name="testDataProvider" duration-ms="34" started-at="2021-01-03T10:10:18Z" data-provider="data" finished-at="2021-01-03T10:10:18Z">
+        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@321e8058]" name="testDataProvider" duration-ms="22" started-at="2021-01-05T03:23:11Z" data-provider="data" finished-at="2021-01-05T03:23:11Z">
           <params>
             <param index="0">
               <value>
@@ -29,7 +29,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDataProvider -->
-        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@43689561]" name="testDataProvider" duration-ms="42" started-at="2021-01-03T10:10:18Z" data-provider="data" finished-at="2021-01-03T10:10:18Z">
+        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@321e8058]" name="testDataProvider" duration-ms="13" started-at="2021-01-05T03:23:11Z" data-provider="data" finished-at="2021-01-05T03:23:11Z">
           <params>
             <param index="0">
               <value>
@@ -40,7 +40,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDataProvider -->
-        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@43689561]" name="testDataProvider" duration-ms="373" started-at="2021-01-03T10:10:18Z" data-provider="data" finished-at="2021-01-03T10:10:19Z">
+        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@321e8058]" name="testDataProvider" duration-ms="1118" started-at="2021-01-05T03:23:11Z" data-provider="data" finished-at="2021-01-05T03:23:13Z">
           <params>
             <param index="0">
               <value>
@@ -51,7 +51,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDataProvider -->
-        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@43689561]" name="testDataProvider" duration-ms="200" started-at="2021-01-03T10:10:19Z" data-provider="data" finished-at="2021-01-03T10:10:19Z">
+        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@321e8058]" name="testDataProvider" duration-ms="622" started-at="2021-01-05T03:23:13Z" data-provider="data" finished-at="2021-01-05T03:23:13Z">
           <params>
             <param index="0">
               <value>
@@ -62,7 +62,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDataProvider -->
-        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@43689561]" name="testDataProvider" duration-ms="196" started-at="2021-01-03T10:10:19Z" data-provider="data" finished-at="2021-01-03T10:10:19Z">
+        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@321e8058]" name="testDataProvider" duration-ms="529" started-at="2021-01-05T03:23:13Z" data-provider="data" finished-at="2021-01-05T03:23:14Z">
           <params>
             <param index="0">
               <value>
@@ -73,7 +73,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDataProvider -->
-        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@43689561]" name="testDataProvider" duration-ms="162" started-at="2021-01-03T10:10:19Z" data-provider="data" finished-at="2021-01-03T10:10:19Z">
+        <test-method status="PASS" signature="testDataProvider(com.markerhub.entity.MyFirstModel)[pri:0, instance:com.markerhub.caseTestNG.testservice@321e8058]" name="testDataProvider" duration-ms="370" started-at="2021-01-05T03:23:14Z" data-provider="data" finished-at="2021-01-05T03:23:14Z">
           <params>
             <param index="0">
               <value>

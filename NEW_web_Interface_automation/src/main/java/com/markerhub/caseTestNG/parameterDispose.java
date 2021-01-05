@@ -38,7 +38,6 @@ public class parameterDispose {
         }
 
 
-
         //判断请求头是否为空
         if (!my.getHeader().isEmpty()) {
             //不为空，将实例中的header转换为map赋值给入参header
@@ -86,13 +85,13 @@ public class parameterDispose {
         //将依赖数据放入请求体param
         if (ylmap != null && my.getRequestMethod().equals("GET")) {
             if (params != null) {
-                for (String s:ylmap.keySet()) {
-                    params.put(s,ylmap.get(s));
+                for (String s : ylmap.keySet()) {
+                    params.put(s, ylmap.get(s));
                 }
             } else {
                 params = new HashMap<String, Object>();
-                for (String s:ylmap.keySet()) {
-                    params.put(s,ylmap.get(s));
+                for (String s : ylmap.keySet()) {
+                    params.put(s, ylmap.get(s));
                 }
             }
         }
@@ -110,6 +109,14 @@ public class parameterDispose {
                 } else {
                     //将data转换成map
                     Map<String, String> dataMap = StringJsonMap.StMap(my.getData());
+                    for (String key : dataMap.keySet()) {
+                        String dataMapSt = dataMap.get(key);
+                        if (((dataMapSt.substring(dataMapSt.length() - 1)).equals("\"")) && ((dataMapSt.substring(0, 1)).equals("\""))) {
+                            dataMapSt = dataMapSt.substring(1, dataMapSt.length() - 1);
+                        }
+                        dataMap.put(key, dataMapSt);
+                    }
+
                     dataMap.putAll(ylmap);
                     JSONObject jsonObject = new JSONObject(dataMap);
                     data = jsonObject.toString();
@@ -148,8 +155,8 @@ public class parameterDispose {
         requestReturn requestReturn = null;
         if (my.getRequestMethod().equals("POST")) {
             try {
-                requestReturn = requestPostGet.requestPost(my.getUrl(), header, params, data, cookieStore, getCookie,formData);
-            }catch (Exception e){
+                requestReturn = requestPostGet.requestPost(my.getUrl(), header, params, data, cookieStore, getCookie, formData);
+            } catch (Exception e) {
                 //如果请求中出现异常，将直接把抛出来的异常写入结果，并将异常抛出
                 my.setAssertResult("N");
                 my.setRequestResult(e.toString());
@@ -160,7 +167,7 @@ public class parameterDispose {
         } else if (my.getRequestMethod().equals("GET")) {
             try {
                 requestReturn = requestPostGet.requestGet(url, header, params, getCookie, cookieStore);
-            }catch (Exception e){
+            } catch (Exception e) {
                 //如果请求中出现异常，将直接把抛出来的异常写入结果，并将异常抛出
                 my.setAssertResult("N");
                 my.setRequestResult(e.toString());
