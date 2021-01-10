@@ -34,6 +34,13 @@ public class MyFirstModelController {
     @Autowired
     MyFirstModelService myFirstModelService;
 
+    @GetMapping("lujing")
+    public void lujing(){
+        String path = this.getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
+        System.out.println(path);
+    }
+
+
     //查询所有用例
     @PostMapping("/findAll")
     public Result find_all() {
@@ -71,7 +78,11 @@ public class MyFirstModelController {
     //批量删除用例
     @PostMapping("/deleteList")
     public Result deleteList(@RequestBody List<String> caseid_list) {
-
+        for (String st:caseid_list) {
+            if (st.equals("1")||st.equals("2")||st.equals("3")||st.equals("4")||st.equals("5")||st.equals("6")||st.equals("7")||st.equals("8")){
+                return Result.succ(201, "无法删除展示数据", null);
+            }
+        }
         myFirstModelService.deleteList(caseid_list);
         return Result.succ(200, "操作成功", null);
     }
@@ -91,7 +102,9 @@ public class MyFirstModelController {
     //修改用例
     @PostMapping("/updateCase")
     public Result updateCase(@RequestBody MyFirstModel myFirstModel) {
-
+        if (myFirstModel.getId().equals("1")||myFirstModel.getId().equals("2")||myFirstModel.getId().equals("3")||myFirstModel.getId().equals("4")||myFirstModel.getId().equals("5")||myFirstModel.getId().equals("6")||myFirstModel.getId().equals("7")||myFirstModel.getId().equals("8")){
+            return Result.succ(201, "无法修改展示数据", null);
+        }
         myFirstModelService.updateCase(myFirstModel);
         return Result.succ(200, "操作成功", null);
     }

@@ -29,4 +29,6 @@ public interface MyFirstModelMapper extends BaseMapper<MyFirstModel> {
     void saveMoreModification(@Param("myFirstModel_list") List<MyFirstModel> myFirstModel_list);
 
     List<MyFirstModel> findById(List<String> caseid_list);
+
+    List<MyFirstModel> findByCaseId(List<String> caseid_List);
 }

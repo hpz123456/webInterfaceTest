@@ -27,6 +27,8 @@ public class Entry {
         TestNG testNG = new TestNG();
         List<String> suites = new ArrayList<String>();
         suites.add("src/main/resources/testng.xml");
+
+//        suites.add("BOOT-INF/classes!/testng.xml");
         //suites.add(".\\test-output\\testng-failed.xml");
         testNG.setTestSuites(suites);
         testNG.run();

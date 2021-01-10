@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="NEW_web_Interface_automation" />
+        <module name="testReport" />
         <module name="Report" />
       </profile>
     </annotationProcessing>
@@ -21,6 +22,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="NEW_web_Interface_automation" options="-parameters" />
       <module name="Report" options="-parameters" />
+      <module name="testReport" options="-parameters" />
     </option>
   </component>
 </project>

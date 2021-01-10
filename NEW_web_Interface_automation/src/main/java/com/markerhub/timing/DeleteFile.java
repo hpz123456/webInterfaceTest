@@ -17,6 +17,7 @@ public class DeleteFile {
 	//cron表达式
 	//秒  分  时  日  月  周几
 	@Scheduled(cron = "0 0 * * * ?")
+//	@Scheduled(cron = "*/5 * * * * ?")
 	public void deleFile() throws IOException {
 
 		System.out.println("1");

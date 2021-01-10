@@ -79,7 +79,12 @@ public class MyFirstModelServiceImpl extends ServiceImpl<MyFirstModelMapper, MyF
     //批量新增用例
     @Override
     public void saveMoreModification(List<MyFirstModel> myFirstModel_list) {
-        myFirstModelMapper.saveMoreModification(formatting(myFirstModel_list));
+        List<MyFirstModel> myFirstModels = formatting(myFirstModel_list);
+        deWeight(myFirstModels);
+        if(myFirstModels.size() > 0){
+            myFirstModelMapper.saveMoreModification(myFirstModels);
+        }
+//        myFirstModelMapper.saveMoreModification(this.formatting(myFirstModel_list));
     }
 
 
@@ -94,14 +99,19 @@ public class MyFirstModelServiceImpl extends ServiceImpl<MyFirstModelMapper, MyF
             if (myFirstModel_list.isEmpty()) {
                 continue;
             }
-            myFirstModelMapper.saveMoreModification(formatting(myFirstModel_list));
+            List<MyFirstModel> myFirstModels = formatting(myFirstModel_list);
+            deWeight(myFirstModels);
+            if(myFirstModels.size() > 0){
+                myFirstModelMapper.saveMoreModification(myFirstModels);
+            }
+//            myFirstModelMapper.saveMoreModification(this.formatting(myFirstModel_list));
         }
         String fpath = path + "\\" + file_name;
         File f = new File(fpath);
         f.delete();
     }
 
-    public static List<MyFirstModel> formatting(List<MyFirstModel> myFirstModel_list) {
+    public List<MyFirstModel> formatting(List<MyFirstModel> myFirstModel_list) {
 //        List<MyFirstModel> list = new ArrayList<MyFirstModel>();
         for (MyFirstModel myFirstModel : myFirstModel_list) {
             myFirstModel.setCaseId(StringUtils.replaceBlank(myFirstModel.getCaseId()));
@@ -129,6 +139,25 @@ public class MyFirstModelServiceImpl extends ServiceImpl<MyFirstModelMapper, MyF
         return myFirstModel_list;
     }
 
+    //去重
+    public List<MyFirstModel> deWeight(List<MyFirstModel> myFirstModel_list){
+        List<String> caseId_List = new ArrayList<String>();
+        for (MyFirstModel myFirstModel:myFirstModel_list) {
+            caseId_List.add(myFirstModel.getCaseId());
+        }
+        List<MyFirstModel> myFirstModelId_List1 = myFirstModelMapper.findByCaseId(caseId_List);
+        if(myFirstModelId_List1.size()>0) {
+            for (MyFirstModel myFirstModel1 : myFirstModelId_List1) {
+//                for (MyFirstModel myFirstModel2 : myFirstModel_list) {
+                    myFirstModel_list.removeIf(MyFirstModel -> MyFirstModel.getCaseId().equals(myFirstModel1.getCaseId()));
+//                    if (myFirstModel1.getCaseId().equals(myFirstModel2.getCaseId())) {
+//                        myFirstModel_list.remove(myFirstModel2);
+//                    }
+//                }
+            }
+        }
+        return myFirstModel_list;
+    }
 
     //获取文件sheet页
     public Integer sheet_list(String path, String file_name) {
